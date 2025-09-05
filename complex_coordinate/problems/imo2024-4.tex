@@ -1,0 +1,39 @@
+\begin{bprb}[IMO2024-4]
+$AB<AC<BC$をみたす三角形$ABC$において, その内心と内接円をそれぞれ$I$, $\omega$とおく.
+直線$BC$上の$C$と異なる点$X$を, $X$を通り直線$AC$に平行な直線が$\omega$に接するようにとる.
+同様に, 直線$BC$上の$B$と異なる点$Y$を, $Y$を通り直線$AB$に平行な直線が$\omega$に接するようにとる.
+直線$AI$と三角形$ABC$の外接円の交点のうち$A$でない方を$P$とする.
+辺$AC$, $AB$の中点をそれぞれ$K$, $L$とおく.
+このとき, $\angle KIL+\angle YPX=180^\circ$が成り立つことを示せ.
+\end{bprb}
+\begin{ifsol*}
+$I$を中心とする座標で考える.
+一般性を失わないため, $3$点$A$, $B$, $C$は反時計回りに並んでいると仮定する.
+$\omega$と辺$BC$, $CA$, $AB$との接点をそれぞれ$D$, $E$, $F$とおく.
+
+直線$AC$に平行な$\omega$の接線は, $e$におけるものと$-e$におけるものとがあるが, $X$が$C$と異なることから, $X$は$-e$における$\omega$の接線と直線$BC$との交点である.
+これにより,
+\[x=\frac{-2de}{d-e}=\frac{2ed}{e-d}\]
+である.
+同様に,
+\[y=\frac{2fd}{f-d}\]
+である.
+$K$, $L$はそれぞれ辺$AC$, $AB$の中点なので
+\[k=\frac{e(2df+de+ef)}{(d+e)(e+f)},\quad l=\frac{f(2de+df+ef)}{(d+f)(e+f)}\]
+である.
+また, $P$は$I$と$A$内の傍心$I_a$との中点なので定理\ref{thm:excenter-i}により
+\[p=\frac{2def}{(d+e)(d+f)}\]
+である.
+
+$\lvert\triangle{IBC}\rvert<\frac 12\lvert\triangle{ABC}\rvert$なので$I$は直線$KL$に関して$A$と反対側にあり, $\angle KIL=\measuredangle KIL$である.
+また, $B$, $X$, $D$, $Y$, $C$はこの順に並ぶので$\angle YPX=\measuredangle YPX$である.
+したがって, $\angle KIL+\angle YPX=180^\circ$を示すには$\frac{l-i}{k-i}\frac{x-p}{y-p}\in\mathbb{R}$を示せばよい.
+\begin{align*}
+\frac{l-i}{k-i}\frac{x-p}{y-p}
+&=\frac{\frac{f(2de+df+ef)}{(d+f)(e+f)}}{\frac{e(2df+de+ef)}{(d+e)(e+f)}}\cdot\frac{\frac{2ed}{e-d}-\frac{2def}{(d+e)(d+f)}}{\frac{2fd}{f-d}-\frac{2def}{(d+e)(d+f)}}\\
+&=\frac{f(d+e)(2de+df+ef)}{e(d+f)(2df+de+ef)}\cdot\frac{e(f-d)(d+e+2f)}{f(e-d)(d+2e+f)}\\
+&=\frac{(e+d)(f-d)}{(e-d)(f+d)}\cdot\frac{(2de+df+ef)(d+e+2f)}{(2df+de+ef)(d+2e+f)}\\
+\end{align*}
+であり, これは共軛をとっても不変であるため実数である.
+したがって, $\angle KIL+\angle YPX=180^\circ$が示された.
+\end{ifsol*}

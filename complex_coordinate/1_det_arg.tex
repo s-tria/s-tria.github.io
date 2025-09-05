@@ -1,0 +1,355 @@
+複素座標に限らず, 幾何の問題を座標計算で解く際には行列式の計算の能力は非常に役に立つ.
+また, 複素座標による座標計算では複素数の偏角の計算が非常に重要である.
+そのため, 本章では行列式および偏角についての解説を行う.
+\subsection{行列式の定義・性質}
+本節では本章を読むにあたって必要な事項を列挙した.
+証明や詳しい解説は線型代数の教科書を参考にされたい.
+また, ベクトルを太字でなく通常の字体で表記しているため, 混乱しないように注意せよ.
+行列の成分は複素数であるとする.
+\begin{bdef}
+正方行列$A=(a_{ij})_{ij}$に対して次のようにして定まる値$\det A$を$A$の\textbf{行列式}と呼ぶ.
+\[\det A=\sum_{\sigma\in S_n}\operatorname{sgn}(\sigma)a_{\sigma(1)1}\cdots a_{\sigma(n)n}.\]
+ここで, $S_n$は$n$次対称群である.
+また, 行列式は$\det A$の他に$\lvert A\rvert$と表記され, この表記を用いる際は行列の成分を囲む括弧は省略される.
+\end{bdef}
+例えば,
+\[\begin{vmatrix}a&b\\c&d\end{vmatrix}=ad-bc,\quad\begin{vmatrix}a&b&c\\p&q&r\\x&y&z\end{vmatrix}=aqz+brx+cpy-ary-bpz-cqx\]
+である.
+\begin{bprop}
+(線型性)
+\[\begin{vmatrix}a_1&\cdots&\lambda_1a_i+\lambda_2b_i&\cdots&a_n\end{vmatrix}=\lambda_1\begin{vmatrix}a_1&\cdots&a_i&\cdots&a_n\end{vmatrix}+\lambda_2\begin{vmatrix}a_1&\cdots&b_i&\cdots&a_n\end{vmatrix}.\]
+(交代性)
+\[\begin{vmatrix}a_1&\cdots&a_i&\cdots&a_j&\cdots&a_n\end{vmatrix}=-\begin{vmatrix}a_1&\cdots&a_j&\cdots&a_i&\cdots&a_n\end{vmatrix}.\]
+(余因子展開)
+\[\det A=\sum_{i=1}^n(-1)^{i+j}a_{ij}\det A_{ij}.\]
+ただし, $A_{ij}$は$A$から$i$行目および$j$列目を除いた$n-1$次行列.
+\end{bprop}
+\begin{bcor}\label{cor:gaussian}
+$a_i=0$となる$i$が存在するとき, 行列式の値は$0$である:
+\[\begin{vmatrix}a_1&\cdots&a_{i-1}&0&a_{i+1}&\cdots&a_n\end{vmatrix}=0.\]
+
+$a_i=a_j$となる相異なる$i$, $j$が存在するとき, 行列式の値は$0$である:
+\[\begin{vmatrix}a_1&\cdots&a_i&\cdots&a_i&\cdots&a_n\end{vmatrix}=0.\]
+
+ある列の複素数倍を他の列に加えても行列式の値は変わらない:
+\[\begin{vmatrix}a_1&\cdots&a_i&\cdots&\lambda a_i+a_j&\cdots&a_n\end{vmatrix}=\begin{vmatrix}a_1&\cdots&a_i&\cdots&a_j&\cdots&a_n\end{vmatrix}.\]
+\end{bcor}
+\begin{bprop}
+$a_1,\ldots,a_n$が線型従属のとき
+\[\begin{vmatrix}a_1&\cdots&a_n\end{vmatrix}=0.\]
+\end{bprop}
+\begin{bprop}
+$n$次正方行列$A$に対して
+\[\det A=\det{}^tA.\]
+\end{bprop}
+\begin{bprop}
+$n$次正方行列$A$, $B$に対して
+\[\det AB=\det A\det B.\]
+\end{bprop}
+%
+\subsection{Cram\'erの公式}
+\begin{bthm}
+\[\begin{vmatrix}a_1&a_2&a_3\\b_1&b_2&b_3\\c_1&c_2&c_3\end{vmatrix}\neq 0\]
+のとき, 連立方程式
+\[\left\{\begin{alignedat}{3}
+a_1&x+{}&a_2&y+{}&a_3&z=a\\
+b_1&x+{}&b_2&y+{}&b_3&z=b\\
+c_1&x+{}&c_2&y+{}&c_3&z=c
+\end{alignedat}\right.\]
+は解$(x,y,z)$をもち,
+\[x=\frac{\begin{vmatrix}a&a_2&a_3\\b&b_2&b_3\\c&c_2&c_3\end{vmatrix}}{\begin{vmatrix}a_1&a_2&a_3\\b_1&b_2&b_3\\c_1&c_2&c_3\end{vmatrix}}\]
+である.
+$y$, $z$についても同様の式が成り立つ.
+\end{bthm}
+\begin{prf*}
+\[\begin{vmatrix}a_1&a_2&a_3\\b_1&b_2&b_3\\c_1&c_2&c_3\end{vmatrix}\neq 0\]
+により, 連立方程式は解をただ$1$組もつ.
+それを$(x,y,z)$とすると,
+\begin{align*}
+\begin{vmatrix}a&a_2&a_3\\b&b_2&b_3\\c&c_2&c_3\end{vmatrix}
+&=\begin{gmatrix}[v]a_1x+a_2y+a_3z&a_2&a_3\\b_1x+b_2y+b_3z&b_2&b_3\\c_1x+c_2y+c_3z&c_2&c_3
+\colops\add[-y]{1}{0}\add[-z]{2}{0}\end{gmatrix}\\
+&=\begin{vmatrix}a_1x&a_2&a_3\\b_1x&b_2&b_3\\c_1x&c_2&c_3\end{vmatrix}\\
+&=x\begin{vmatrix}a_1&a_2&a_3\\b_1&b_2&b_3\\c_1&c_2&c_3\end{vmatrix}
+\end{align*}
+となるので
+\[x=\frac{\begin{vmatrix}a&a_2&a_3\\b&b_2&b_3\\c&c_2&c_3\end{vmatrix}}{\begin{vmatrix}a_1&a_2&a_3\\b_1&b_2&b_3\\c_1&c_2&c_3\end{vmatrix}}\]
+が得られる.
+\end{prf*}
+%
+\subsection{Vandelmondeの行列式}
+\begin{bthm}
+複素数$x_1,\ldots,x_n$に対して,
+\[\begin{vmatrix}1&1&\cdots&1\\x_1&x_2&\cdots&x_n\\\vdots&\vdots&\ddots&\vdots\\{x_1}^{n-1}&{x_2}^{n-1}&\cdots&{x_n}^{n-1}\end{vmatrix}=\prod_{i<j}(x_j-x_i).\]
+\end{bthm}
+\begin{prf*}
+求める行列式を$\Delta$とおく.
+$\Delta$は交代式なので$\prod_{i<j}(x_j-x_i)$で割りきれる.
+次数を比較すると定数$C$を用いて$\Delta=C\prod_{i<j}(x_j-x_i)$と書けることがわかり, $x_2{x_3}^2\cdots{x_n}^{n-1}$の係数を比較すると$C=1$がわかる.
+\end{prf*}
+%
+\subsection{線型性の応用}
+\begin{eg}
+\[\begin{vmatrix}1&1&1\\x+1&y+1&z+1\\x^2+x+1&y^2+y+1&z^2+z+1\end{vmatrix}\]
+を計算する.
+線型性を用いると
+\begin{align*}
+\begin{vmatrix}1&1&1\\x+1&y+1&z+1\\x^2+x+1&y^2+y+1&z^2+z+1\end{vmatrix}
+&=\begin{vmatrix}1&1&1\\x&y&z\\x^2&y^2&z^2\end{vmatrix}
++\begin{vmatrix}1&1&1\\x&y&z\\x&y&z\end{vmatrix}
++\begin{vmatrix}1&1&1\\x&y&z\\1&1&1\end{vmatrix}\\
+&+\begin{vmatrix}1&1&1\\1&1&1\\x^2&y^2&z^2\end{vmatrix}
++\begin{vmatrix}1&1&1\\1&1&1\\x&y&z\end{vmatrix}
++\begin{vmatrix}1&1&1\\1&1&1\\1&1&1\end{vmatrix}
+\end{align*}
+と分解できる.
+第1項以外は同一の行が含まれるので行列式は$0$となり,
+\[\begin{vmatrix}1&1&1\\x+1&y+1&z+1\\x^2+x+1&y^2+y+1&z^2+z+1\end{vmatrix}=\begin{vmatrix}1&1&1\\x&y&z\\x^2&y^2&z^2\end{vmatrix}=(y-x)(z-x)(z-y)\]
+である.
+\end{eg}
+\begin{eg}
+Vandelmondeの行列式に異なる導出を与える.
+$n=4$の場合で説明する.
+系\ref{cor:gaussian}を用いて行列式を単純にする.
+\begin{align*}
+&\phantom{={}}\begin{gmatrix}[v]
+1&1&1&1\\
+x&y&z&w\\
+x^2&y^2&z^2&w^2\\
+x^3&y^3&z^3&w^3
+\colops
+\add[-1]{0}{1}
+\add[-1]{0}{2}
+\add[-1]{0}{3}
+\end{gmatrix}\\
+&=\begin{vmatrix}
+1&0&0&0\\
+x&y-x&z-x&w-x\\
+x^2&(y+x)(y-x)&(z+x)(z-x)&(w+x)(w-x)\\
+x^3&(y^2+yx+x^2)(y-x)&(z^2+zx+x^2)(z-x)&(w^2+wx+x^2)(w-x)
+\end{vmatrix}\\
+&=\begin{vmatrix}
+y-x&z-x&w-x\\
+(y+x)(y-x)&(z+x)(z-x)&(w+x)(w-x)\\
+(y^2+yx+x^2)(y-x)&(z^2+zx+x^2)(z-x)&(w^2+wx+x^2)(w-x)
+\end{vmatrix}\\
+&=(y-x)(z-x)(w-x)\begin{vmatrix}
+1&1&1\\
+y+x&z+x&w+x\\
+y^2+yx+x^2&z^2+zx+x^2&w^2+wx+x^2
+\end{vmatrix}
+\end{align*}
+であり,
+\begin{align*}
+&\phantom{={}}\begin{gmatrix}[v]
+1&1&1\\
+y+x&z+x&w+x\\
+y^2+yx+x^2&z^2+zx+x^2&w^2+wx+x^2
+\rowops
+\add[-x]{1}{2}
+\add[-x]{0}{1}
+\end{gmatrix}\\
+&=\begin{vmatrix}
+1&1&1\\
+y&z&w\\
+y^2&z^2&w^2
+\end{vmatrix}
+\end{align*}
+となって$n=3$の場合に帰着できる.
+これを繰り返すことで
+\[\begin{vmatrix}
+1&1&1&1\\
+x&y&z&w\\
+x^2&y^2&z^2&w^2\\
+x^3&y^3&z^3&w^3
+\end{vmatrix}
+=(y-x)(z-x)(w-x)\cdot(z-y)(w-y)\cdot(w-z)\]
+がわかる.
+\end{eg}
+\begin{eg}\label{eg:det_322}
+\[\begin{vmatrix}
+ab(a+b)&(a+b)^2&ab\\
+bc(b+c)&(b+c)^2&bc\\
+ca(c+a)&(c+a)^2&ca\\
+\end{vmatrix}\]
+を計算する.
+
+$s=a+b+c$とおくと,
+\begin{align*}
+\begin{vmatrix}
+ab(a+b)&(a+b)^2&ab\\
+bc(b+c)&(b+c)^2&bc\\
+ca(c+a)&(c+a)^2&ca\\
+\end{vmatrix}
+&=
+\begin{vmatrix}
+ab(s-c)&(a+b)^2&ab\\
+bc(s-a)&(b+c)^2&bc\\
+ca(s-b)&(c+a)^2&ca\\
+\end{vmatrix}\\
+&=s\begin{vmatrix}
+ab&(a+b)^2&ab\\
+bc&(b+c)^2&bc\\
+ca&(c+a)^2&ca\\
+\end{vmatrix}
+-abc\begin{vmatrix}
+1&(a+b)^2&ab\\
+1&(b+c)^2&bc\\
+1&(c+a)^2&ca\\
+\end{vmatrix}\\
+&=-abc\begin{vmatrix}
+1&(a+b)^2&ab\\
+1&(b+c)^2&bc\\
+1&(c+a)^2&ca\\
+\end{vmatrix}
+\end{align*}
+となる.
+\[\begin{vmatrix}
+1&(a+b)^2&ab\\
+1&(b+c)^2&bc\\
+1&(c+a)^2&ca\\
+\end{vmatrix}\]
+は$4$次の交代式なので定数$C$を用いて$C(a+b+c)(b-a)(c-a)(c-b)$と書くことができる.
+$bc^3$の係数を比較すると, $C=-1$が得られる.
+したがって,
+\[\begin{vmatrix}
+ab(a+b)&(a+b)^2&ab\\
+bc(b+c)&(b+c)^2&bc\\
+ca(c+a)&(c+a)^2&ca\\
+\end{vmatrix}
+=abc(a+b+c)(b-a)(c-a)(c-b)\]
+である.
+\end{eg}
+\begin{eg}
+\[\begin{vmatrix}
+d(2ef+ed+fd)(2d+e+f)&(2d+e+f)(e+d)(f+d)&(e+d)^2(f+d)^2\\
+e(2fd+fe+de)(2e+f+d)&(2e+f+d)(f+e)(d+e)&(f+e)^2(d+e)^2\\
+f(2de+df+ef)(2f+d+e)&(2f+d+e)(d+f)(e+f)&(d+f)^2(e+f)^2
+\end{vmatrix}\]
+を計算する.
+$s=d+e+f$, $t=de+ef+fd$, $u=def$とおく.
+$d^3=sd^2-td+u$に注意する.
+\[d(2ef+ed+fd)(2d+e+f)=(u+dt)(d+s)=td^2+(st+u)d+su,\]
+\[(2d+e+f)(e+d)(f+d)=(d+s)(d^2+t)=2sd^2+st+u,\]
+\[(e+d)^2(f+d)^2=(d^2+t)^2=(s^2+t)d^2+(-st+u)d+su+t^2\]
+を用いる.
+\begin{align*}
+&\phantom{{}={}}\begin{vmatrix}
+d(2ef+ed+fd)(2d+e+f)&(2d+e+f)(e+d)(f+d)&(e+d)^2(f+d)^2\\
+e(2fd+fe+de)(2e+f+d)&(2e+f+d)(f+e)(d+e)&(f+e)^2(d+e)^2\\
+f(2de+df+ef)(2f+d+e)&(2f+d+e)(d+f)(e+f)&(d+f)^2(e+f)^2
+\end{vmatrix}\\
+&=\begin{vmatrix}
+td^2+(st+u)d+su&2sd^2+st+u&(s^2+t)d^2+(u-st)d+su+t^2\\
+te^2+(st+u)e+su&2se^2+st+u&(s^2+t)e^2+(u-st)e+su+t^2\\
+tf^2+(st+u)f+su&2sf^2+st+u&(s^2+t)f^2+(u-st)f+su+t^2\\
+\end{vmatrix}\\
+&=\begin{vmatrix}
+1&d&d^2\\
+1&e&e^2\\
+1&f&f^2
+\end{vmatrix}
+\begin{vmatrix}
+su&st+u&su+t^2\\
+st+u&0&u-st\\
+t&2s&s^2+t
+\end{vmatrix}\\
+&=-(e-d)(f-d)(f-e)s^2(st-u)^2\\
+&=-(e-d)(f-d)(f-e)(d+e+f)^2(d+e)^2(e+f)^2(f+d)^2
+\end{align*}
+と計算できる.
+したがって,
+\begin{align*}
+&\phantom{{}={}}\begin{vmatrix}
+d(2ef+ed+fd)(2d+e+f)&(2d+e+f)(e+d)(f+d)&(e+d)^2(f+d)^2\\
+e(2fd+fe+de)(2e+f+d)&(2e+f+d)(f+e)(d+e)&(f+e)^2(d+e)^2\\
+f(2de+df+ef)(2f+d+e)&(2f+d+e)(d+f)(e+f)&(d+f)^2(e+f)^2
+\end{vmatrix}\\
+&=-(e-d)(f-d)(f-e)(d+e+f)^2(d+e)^2(e+f)^2(f+d)^2
+\end{align*}
+である.
+\end{eg}
+%
+%
+\subsection{複素数の偏角}
+ここからは偏角について解説する.
+\begin{bdef}
+$0$でない複素数$z$が正の実数$r$, 実数$\theta$を用いて
+\[z=r(\cos\theta+\sqrt{-1}\sin\theta)\]
+と表されるとき, $\theta$を$z$の\textbf{偏角}といい, $\arg z$で表す.
+\end{bdef}
+偏角は一意に定まらないことに注意する\footnote{同値類という言葉を知っている人ならば, $\arg$は$\mathbb{C}\setminus\{0\}$から$\mathbb{R}/2\pi\mathbb{Z}$への写像であると考えた方がわかりやすいであろう.}.
+例えば,
+\[1=\cos 0+\sqrt{-1}\sin 0=\cos 2\pi+\sqrt{-1}\sin 2\pi\]
+であるため$1$の偏角は$0$でも$2\pi$でもある.
+偏角は一意には定まらないが, $2\pi$の整数倍の差を無視すると一意に定まる.
+そこで, 偏角の\textbf{主値}と呼ばれる次の値を定義する.
+\begin{bdef}
+$0$でない複素数$z$に対し, $z$の偏角であって$0$以上$2\pi$未満であるものを$\Arg z$で表す.
+\end{bdef}
+$\Arg$は一価の函数である.
+\subsection{複素数の平方根}
+$z=r(\cos\theta+\sqrt{-1}\sin\theta)$であるとする.
+このとき, de Moivreの定理により
+\[\bigl(\sqrt r\bigl(\cos(\theta/2)+\sqrt{-1}\sin(\theta/2)\bigr)\bigr)^2=r(\cos\theta+\sqrt{-1}\sin\theta)\]
+であるため, $\sqrt z=\sqrt r\bigl(\cos(\theta/2)+\sqrt{-1}\sin(\theta/2)\bigr)$と考えられる.
+一方で,
+\[-\sqrt r\bigl(\cos(\theta/2)+\sqrt{-1}\sin(\theta/2)\bigr)\]
+も二乗すると$z$になるためこれも$\sqrt z$の候補である.
+したがって, $\sqrt z$としてありうる値には偏角が$\frac 12\Arg z$であるものと$\frac 12\Arg z+\pi$であるものとの$2$つがある.
+このことは$\theta$と$\theta+2\pi$とは$\operatorname{mod}2\pi$で等しいが$\frac\theta 2$と$\frac{\theta+2\pi}2$とは$\operatorname{mod}2\pi$で等しくないことに起因している.
+
+以上により, $\sqrt z$も$\arg z$と同様に多価函数であると考えるのがよい.
+\subsection{複素数の傾き}
+偏角は$\operatorname{mod}2\pi$で定まる量であるが, 複素座標の計算においては傾きのみに着目し, $z$も$-z$も同じであると考えた方が都合がよい.
+そこで, 次の同値関係を定義する.
+\begin{bdef}
+$0$でない複素数$\alpha$, $\beta$に対して$\frac\beta\alpha\in\mathbb{R}$であることを$\alpha\sim\beta$と表す.
+\end{bdef}
+$\alpha\sim\beta$であるとは, 言わば$\alpha$と$\beta$との傾きが等しいということである.
+\begin{bprop}
+$0$でない複素数$\alpha$, $\beta$, $\gamma$について以下が成り立つ.
+\begin{enumerate}
+\item $\alpha\sim\alpha$.
+\item $\alpha\sim\beta$ならば$\beta\sim\alpha$.
+\item $\alpha\sim\beta$かつ$\beta\sim\gamma$ならば$\alpha\sim\gamma$.
+\end{enumerate}
+\end{bprop}
+\begin{prf*}
+各自確かめよ.
+\end{prf*}
+同値関係$\sim$についての重要な命題を示す.
+\begin{bprop}
+$0$でない複素数$\alpha$, $\beta$, $\gamma$について以下が成り立つ.
+\begin{enumerate}
+\item $\alpha\sim\beta$かつ$\alpha\sim\gamma$であり$\beta+\gamma\neq 0$であるとき, $\alpha\sim\beta+\gamma$.
+\item $\alpha\sim\beta$のとき$\alpha\gamma\sim\beta\gamma$.
+\item $\lvert\alpha\rvert=\lvert\beta\rvert$かつ$\alpha+\beta\neq 0$であるとき, $\alpha+\beta\sim\sqrt{\alpha\beta}$.
+\item $\lvert\alpha\rvert=\lvert\beta\rvert$かつ$\alpha-\beta\neq 0$であるとき, $\alpha-\beta\sim\sqrt{-1}\sqrt{\alpha\beta}$.
+\item $\alpha\sim\beta$は$\alpha\bar\beta=\bar\alpha\beta$と同値.
+\item $\lvert\alpha\rvert=1$のとき, $\alpha\sim\beta$は$\beta=\alpha^2\bar\beta$と同値.
+\end{enumerate}
+\end{bprop}
+\begin{note}
+3, 4において$\sqrt{\alpha\beta}$としてありうる値のどちらを選んでも$\alpha+\beta\sim\sqrt{\alpha\beta}$の意味することは変わらないことに注意する.
+\end{note}
+\begin{prf*}
+1, 2は明らか.
+3は$0$, $\alpha$, $\alpha+\beta$, $\beta$が菱形の$4$頂点をなすことからわかる.
+4は3から明らか.
+5は$z\in\mathbb{R}$と$z=\bar z$とが同値であることを用いるとわかる.
+6は5と$\bar\alpha=\frac 1\alpha$とからわかる.
+\end{prf*}
+上の命題を用いる具体例を紹介して本章を終える.
+\begin{eg}
+$\lvert a\rvert=\lvert b\rvert=\lvert c\rvert=1$かつ$(a+b+c)(ab+bc+ca)\neq 0$であるとき
+\[(a+b+c)(ab+bc+ca)\sim abc.\]
+\begin{prf*}
+\begin{align*}
+\overline{(a+b+c)(ab+bc+ca)}
+&=\biggl(\frac 1a+\frac 1b+\frac 1c\biggr)\biggl(\frac 1{ab}+\frac 1{bc}+\frac 1{ca}\biggr)\\
+&=\frac{(a+b+c)(ab+bc+ca)}{(abc)^2}
+\end{align*}
+によりわかる.
+\end{prf*}
+\end{eg}

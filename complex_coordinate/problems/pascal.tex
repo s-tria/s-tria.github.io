@@ -1,0 +1,30 @@
+\begin{bprb}[Pascalの定理]
+単位円上に$6$点$A$, $B$, $C$, $D$, $E$, $F$があるとき, 直線$AB$と直線$DE$との交点, 直線$BC$と直線$EF$との交点, 直線$CD$と直線$FA$との交点は同一直線上にあることを示せ.
+\end{bprb}
+\begin{ifsol*}
+直線$AB$と直線$DE$との交点, 直線$BC$と直線$EF$との交点, 直線$CD$と直線$FA$との交点の座標はそれぞれ
+\[\frac{ab(d+e)-de(a+b)}{ab-de},\ \frac{bc(e+f)-ef(b+c)}{bc-ef},\ \frac{cd(f+a)-fa(c+d)}{cd-fa}\]
+で与えられる.
+$\overline{(\frac{ab(d+e)-de(a+b)}{ab-de})}=\frac{a+b-d-e}{ab-de}$などに注意すると,
+\[\begin{vmatrix}
+ab(d+e)-de(a+b)&a+b-d-e&ab-de\\
+bc(e+f)-ef(b+c)&b+c-e-f&bc-ef\\
+cd(f+a)-fa(c+d)&c+d-f-a&cd-fa
+\end{vmatrix}
+=0\]
+を示せばよい.
+\begin{align*}
+&(c-f)\begin{pmatrix}ab(d+e)-de(a+b)\\ab-de\\a+b-d-e\end{pmatrix}
++(d-a)\begin{pmatrix}bc(e+f)-ef(b+c)\\bc-ef\\b+c-e-f\end{pmatrix}\\
+&\phantom{{}={}}+(e-b)\begin{pmatrix}cd(f+a)-fa(c+d)\\cd-fa\\c+d-f-a\end{pmatrix}\\
+&=\begin{pmatrix}0\\0\\0\end{pmatrix}
+\end{align*}
+であることを用いると, $c-f=d-a=e-b=0$のときとそうでないときとでどちらも
+\[\begin{vmatrix}
+ab(d+e)-de(a+b)&a+b-d-e&ab-de\\
+bc(e+f)-ef(b+c)&b+c-e-f&bc-ef\\
+cd(f+a)-fa(c+d)&c+d-f-a&cd-fa
+\end{vmatrix}
+=0\]
+が成り立つことがわかる.
+\end{ifsol*}

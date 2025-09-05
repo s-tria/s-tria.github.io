@@ -1,0 +1,45 @@
+\begin{bprb}[Simsonの定理]
+三角形$ABC$と点$P$とがある.
+$P$から直線$BC$, $CA$, $AB$に下ろした垂線の足をそれぞれ$P_a$, $P_b$, $P_c$とする.
+$A$, $B$, $C$, $P$が共円であることと$P_a$, $P_b$, $P_c$が共線であることとは同値であることを示せ.
+\end{bprb}
+\begin{ifsol*}
+$\lvert a\rvert=\lvert b\rvert=\lvert c\rvert=1$となるような座標で考える.
+\[p_a=\frac 12(b+c+p-bc\bar p),\quad p_b=\frac 12(c+a+p-ca\bar p),\quad p_c=\frac 12(a+b+p-ab\bar p)\]
+であるので, $P_a$, $P_b$, $P_c$が共線であることは
+\[\begin{vmatrix}
+b+c+p-bc\bar p&\frac 1b+\frac 1c+\bar p-\frac p{bc}&1\\
+c+a+p-ca\bar p&\frac 1c+\frac 1a+\bar p-\frac p{ca}&1\\
+a+b+p-ab\bar p&\frac 1a+\frac 1b+\bar p-\frac p{ab}&1
+\end{vmatrix}=0\]
+と同値である.
+ここで,
+\begin{align*}
+\begin{vmatrix}
+b+c+p-bc\bar p&\frac 1b+\frac 1c+\bar p-\frac p{bc}&1\\
+c+a+p-ca\bar p&\frac 1c+\frac 1a+\bar p-\frac p{ca}&1\\
+a+b+p-ab\bar p&\frac 1a+\frac 1b+\bar p-\frac p{ab}&1
+\end{vmatrix}
+&=\begin{vmatrix}
+b+c-bc\bar p&\frac 1b+\frac 1c-\frac p{bc}&1\\
+c+a-ca\bar p&\frac 1c+\frac 1a-\frac p{ca}&1\\
+a+b-ab\bar p&\frac 1a+\frac 1b-\frac p{ab}&1
+\end{vmatrix}\\
+&=\frac 1{abc}\begin{vmatrix}
+b+c-bc\bar p&a(b+c-p)&1\\
+c+a-ca\bar p&b(c+a-p)&1\\
+a+b-ab\bar p&c(a+b-p)&1
+\end{vmatrix}\\
+&=\frac 1{abc}\begin{vmatrix}
+b+c-bc\bar p&a(b+c-p)&1\\
+(b-a)(c\bar p-1)&(b-a)(c-p)&0\\
+(c-a)(b\bar p-1)&(c-a)(b-p)&0
+\end{vmatrix}\\
+&=\frac{(b-a)(c-a)}{abc}\begin{vmatrix}
+c\bar p-1&c-p\\
+b\bar p-1&b-p
+\end{vmatrix}\\
+&=\frac{(b-a)(c-a)(c-b)}{abc}(1-p\bar p)
+\end{align*}
+と計算できるので, $A$, $B$, $C$, $P$が共円であることと$P_a$, $P_b$, $P_c$が共線であることとは同値であることが示された.
+\end{ifsol*}

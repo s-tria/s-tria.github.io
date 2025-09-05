@@ -1,0 +1,55 @@
+\begin{bprb}[IMO2023-2]
+$AB<AC$なる鋭角三角形$ABC$があり, その外接円を$\Omega$とする.
+点$S$を, $\Omega$の$A$を含む弧$CB$の中点とする.
+$A$を通り$BC$に垂直な直線が直線$BS$と点$D$で交わり, $\Omega$と$A$と異なる点$E$で交わる.
+$D$を通り$BC$と平行な直線が直線$BE$と点$L$で交わる.
+三角形$BDL$の外接円を$\omega$とおくと, $\omega$と$\Omega$が$B$と異なる点$P$で交わった.
+このとき, 点$P$における$\omega$の接線と直線$BS$が, $\angle BAC$の二等分線上で交わることを示せ.
+\end{bprb}
+\begin{ifsol*}
+$\lvert a\rvert=\lvert b\rvert=\lvert c\rvert=1$となるような座標で考える.
+直線$PD$と$\Omega$との交点のうち$P$でない方を$F$とし, $P$を通る$\omega$の接線と$\Omega$との交点のうち$P$でない方を$Q$とする.
+$s=\sqrt{bc}$となるように$\sqrt{bc}$の符号を定める.
+
+$e=-\frac{bc}{a}$である.
+\[\measuredangle BPF=\measuredangle BPD=\measuredangle BLD=\measuredangle ELD=\measuredangle EBC\]
+なので$f=\frac{bc}{e}=-a$である.
+また,
+\[\measuredangle FPQ=\measuredangle DPQ=\measuredangle DBP=\measuredangle SBP\]
+により$q=\frac{fp}{s}=-\frac{ap}{\sqrt{bc}}$である.
+$3$直線$AE$, $BS$, $PF$が共点なので系\ref{cor:concurrency2}により
+\[\begin{vmatrix}ae&a+e&1\\bs&b+s&1\\pf&p+f&1\end{vmatrix}=0\]
+である.
+\begin{align*}
+\begin{vmatrix}ae&a+e&1\\bs&b+s&1\\pf&p+f&1\end{vmatrix}
+&=\begin{vmatrix}-bc&a-\frac{bc}{a}&1\\b\sqrt{bc}&b+\sqrt{bc}&1\\-ap&p-a&1\end{vmatrix}\\
+&=\begin{vmatrix}-bc&a-\frac{2bc}{a}&1\\b\sqrt{bc}&b+\sqrt{bc}+\frac{b\sqrt{bc}}{a}&1\\-ap&-a&1\end{vmatrix}\\
+&=\begin{vmatrix}-bc&2a-\frac{2bc}{a}&1\\b\sqrt{bc}&b+\sqrt{bc}+\frac{b\sqrt{bc}}{a}+a&1\\-ap&0&1\end{vmatrix}\\
+&=\frac{a+\sqrt{bc}}{a}\begin{vmatrix}-bc&2(a-\sqrt{bc})&1\\b\sqrt{bc}&a+b&1\\-ap&0&1\end{vmatrix}\\
+\end{align*}
+であり, $a+\sqrt{bc}\neq 0$なので
+\[\begin{vmatrix}-bc&2(a-\sqrt{bc})&1\\b\sqrt{bc}&a+b&1\\-ap&0&1\end{vmatrix}=0\]
+が成り立つ.
+
+示すべきことは$l(a,-\sqrt{bc})$, $l(b,\sqrt{bc})$, $l(p,-\frac{ap}{\sqrt{bc}})$が共点であることなので
+\[\begin{vmatrix}
+-a\sqrt{bc}&a-\sqrt{bc}&1\\b\sqrt{bc}&b+\sqrt{bc}&1\\-\frac{ap^2}{\sqrt{bc}}&p-\frac{ap}{\sqrt{bc}}&1
+\end{vmatrix}=0\]
+を示せばよい.
+\begin{align*}
+\begin{vmatrix}-a\sqrt{bc}&a-\sqrt{bc}&1\\b\sqrt{bc}&b+\sqrt{bc}&1\\-\frac{ap^2}{\sqrt{bc}}&p-\frac{ap}{\sqrt{bc}}&1\end{vmatrix}
+&=\begin{vmatrix}-a\sqrt{bc}&a-\sqrt{bc}&1\\b\sqrt{bc}&b+\sqrt{bc}&1\\-\frac{ap^2}{\sqrt{bc}}-ap&0&1+\frac{p}{\sqrt{bc}}\end{vmatrix}\\
+&=\biggl(1+\frac{p}{\sqrt{bc}}\biggr)\begin{vmatrix}-a\sqrt{bc}&a-\sqrt{bc}&1\\b\sqrt{bc}&b+\sqrt{bc}&1\\-ap&0&1\end{vmatrix}\\
+\end{align*}
+であり, ここで
+\[\begin{vmatrix}2(a-\sqrt{bc})&1\\a+b&1\end{vmatrix}=\begin{vmatrix}a-\sqrt{bc}&1\\b+\sqrt{bc}&1\end{vmatrix}\]
+および
+\[\begin{vmatrix}-bc&2(a-\sqrt{bc})\\b\sqrt{bc}&a+b\end{vmatrix}=\begin{vmatrix}-a\sqrt{bc}&a-\sqrt{bc}\\b\sqrt{bc}&b+\sqrt{bc}\end{vmatrix}\]
+により
+\[\begin{vmatrix}-bc&2(a-\sqrt{bc})&1\\b\sqrt{bc}&a+b&1\\-ap&0&1\end{vmatrix}=\begin{vmatrix}-a\sqrt{bc}&a-\sqrt{bc}&1\\b\sqrt{bc}&b+\sqrt{bc}&1\\-ap&0&1\end{vmatrix}\]
+となるので,
+\[\begin{vmatrix}
+-a\sqrt{bc}&a-\sqrt{bc}&1\\b\sqrt{bc}&b+\sqrt{bc}&1\\-\frac{ap^2}{\sqrt{bc}}&p-\frac{ap}{\sqrt{bc}}&1
+\end{vmatrix}=0\]
+が示された.
+\end{ifsol*}

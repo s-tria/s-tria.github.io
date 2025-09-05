@@ -1,0 +1,687 @@
+本章では前章の命題を用いて具体的な状況で点の複素座標を計算する.
+$2$点$a$, $b$を通る直線を$l(a,b)$で表し, $\lvert a\rvert=1$のとき$l(a,a)$は$a$における単位円の接線を表すものとする.
+\subsection{外心を中心とする座標}
+\begin{bset}
+三角形$ABC$の外心を$O$として, $o=0$, $\lvert a\rvert=\lvert b\rvert=\lvert c\rvert=1$となるような座標を考える.
+\end{bset}
+\begin{bthm}
+三角形$ABC$の重心, 垂心をそれぞれ$G$, $H$とすると,
+\[
+g=\frac{a+b+c}{3},\quad h=a+b+c
+\]
+である.
+\end{bthm}
+\begin{prf*}
+$g=\frac{a+b+c}{3}$は明らかなので$h=a+b+c$を示す.
+
+$h$は$l(a,-\frac{bc}a)$と$l(b,-\frac{ac}b)$との交点なので,
+\[h=\frac{-bc(b-\frac{ac}b)+ac(a-\frac{bc}a)}{-bc+ac}=\frac{-b^2+ac+a^2-bc}{a-b}=a+b+c\]
+と計算できる.
+\end{prf*}
+\begin{prff*}
+$h^\prime=a+b+c$によって$H'$を定めたとき$H'$が垂心となることを示せば十分である.
+$\angle BAC$と$\angle ABC$はどちらも直角でないと仮定する.
+$\angle BAC\neq\pi/2$なので$b+c\neq 0$であることに注意すると, $h^\prime-a=b+c\sim\sqrt{bc}$および$b-c\sim\sqrt{-1}\sqrt{bc}$により直線$AH^\prime$と直線$BC$とは垂直である.
+同様にして, 直線$BH^\prime$と直線$AC$とは垂直であることがわかるので$H^\prime$は垂心である.
+\end{prff*}
+%
+%
+\begin{bthm}
+三角形$ABC$の九点円の中心を$N_9$とすると,
+\[n_9=\frac{a+b+c}2\]
+である.
+\end{bthm}
+\begin{prf*}
+$N_9$が線分$OH$の中点であることから従う.
+\end{prf*}
+%
+%
+\begin{bthm}
+点$A$から直線$BC$へ下ろした垂線の足を$H_A$とすると,
+\[
+h_a=\frac 12\biggl(a+b+c-\frac{bc}a\biggr)
+\]
+である.
+\end{bthm}
+\begin{prf*}
+$l(a,-bc/a)$と$l(b,c)$とは垂直なので, $H_A$は$l(a,-bc/a)$と$l(b,c)$との交点である.
+したがって,
+\[h_a=\frac{bc(a-bc/a)+bc(b+c)}{bc+bc}=\frac 12\biggl(a+b+c-\frac{bc}a\biggr)\]
+が得られる.
+\end{prf*}
+%
+%
+\begin{bthm}\label{thm:incenter-o}
+$A$を含まない弧$BC$の中点を$M_A$とし, $M_B$, $M_C$も同様に定める.
+\[m_a=-\sqrt{bc},\quad m_b=-\sqrt{ca},\quad m_c=-\sqrt{ab}\]
+となるように$\sqrt a$, $\sqrt b$, $\sqrt c$の符号を定めることができる.
+また, このとき三角形$ABC$の内心を$I$とすると
+\[i=-\sqrt{ab}-\sqrt{bc}-\sqrt{ca}\]
+となる.
+\end{bthm}
+\begin{prf*}
+$0<\alpha<\beta<\gamma<2\pi$となる$\alpha$, $\beta$, $\gamma$を用いて$a=e^{\sqrt{-1}\alpha}$, $b=e^{\sqrt{-1}\beta}$, $c=e^{\sqrt{-1}\gamma}$と書けると仮定して一般性を失わない.
+$\sqrt{a}=e^{\sqrt{-1}\alpha/2}$, $\sqrt{b}=-e^{\sqrt{-1}\beta/2}$, $\sqrt{c}=e^{\sqrt{-1}\gamma/2}$と符号を定めると目標は達成される.
+
+また, $i$は$l(a,-\sqrt{bc})$と$l(b,-\sqrt{ca})$との交点なので
+\begin{align*}
+i
+&=\frac{-a\sqrt{bc}(b-\sqrt{ca})+b\sqrt{ca}(a-\sqrt{bc})}{-a\sqrt{bc}+b\sqrt{ca}}\\
+&=\frac{-\sqrt{a}(b-\sqrt{ca})+\sqrt{b}(a-\sqrt{bc})}{\sqrt{b}-\sqrt{a}}\\
+&=-\sqrt{ab}-\sqrt{bc}-\sqrt{ca}
+\end{align*}
+と計算できる.
+\end{prf*}
+%
+%
+\begin{bthm}\label{thm:isogonal_conjugate}
+三角形$ABC$に関する点$P$の等角共軛点を$Q$とすると,
+\[q=\frac{abc\bar p^2-(ab+bc+ca)\bar p+a+b+c-p}{1-p\bar p}\]
+である.
+\end{bthm}
+\begin{prf*}
+定理\ref{thm:intersection0}により, $p$は$l(a,\frac{a-p}{a\bar p-1})$上にある.
+したがって, $q$は$l(a,\frac{bc(a\bar p-1)}{a-p})$上にある.
+同様に考えると, $q$は$l(b,\frac{ac(b\bar p-1)}{b-p})$上にある.
+以上より, $q$は$l(a,\frac{bc(a\bar p-1)}{a-p})$と$l(b,\frac{ac(b\bar p-1)}{b-p})$との交点なので
+\begin{align*}
+q
+&=\frac{a\frac{bc(a\bar p-1)}{a-p}(b+\frac{ac(b\bar p-1)}{b-p})-b\frac{ac(b\bar p-1)}{b-p}(a+\frac{bc(a\bar p-1)}{a-p})}{a\frac{bc(a\bar p-1)}{a-p}-b\frac{ac(b\bar p-1)}{b-p}}\\
+&=\frac{(a\bar p-1)\bigl(b(b-p)+ac(b\bar p-1)\bigr)-(b\bar p-1)\bigl(a(a-p)+bc(a\bar p-1)\bigr)}{(a-b)(1-p\bar p)}\\
+&=\frac{abc\bar p^2-(ab+bc+ca)\bar p+a+b+c-p}{1-p\bar p}
+\end{align*}
+と計算できる.
+\end{prf*}
+%
+%
+\begin{bthm}\label{thm:lemoine}
+四角形$AXBC$が調和四角形になるように点$X$をとったとき,
+\[x=\frac{a(b+c)-2bc}{2a-b-c}\]
+である.
+また, 三角形$ABC$のLemoine点を$L$とすると,
+\[l=\frac{a^2b^2+b^2c^2+c^2a^2-abc(a+b+c)}{a^2b+a^2c+b^2c+b^2a+c^2a+c^2b-6abc}\]
+である.
+\end{bthm}
+\begin{prf*}
+定理\ref{thm:harmonic}により, $(a+x)(b+c)=2(ax+bc)$が成り立つので
+\[x=\frac{a(b+c)-2bc}{2a-b-c}\]
+である.
+また, $l$は$l(a,\frac{a(b+c)-2bc}{2a-b-c})$と$l(b,\frac{b(c+a)-2ca}{2b-c-a})$との交点なので
+\begin{align*}
+l
+&=\frac{a\frac{a(b+c)-2bc}{2a-b-c}(b+\frac{b(c+a)-2ca}{2b-c-a})-b\frac{b(c+a)-2ca}{2b-c-a}(a+\frac{a(b+c)-2bc}{2a-b-c})}{a\frac{a(b+c)-2bc}{2a-b-c}-b\frac{b(c+a)-2ca}{2b-c-a}}\\
+&=\frac{a^2b^2+b^2c^2+c^2a^2-abc(a+b+c)}{a^2b+a^2c+b^2c+b^2a+c^2a+c^2b-6abc}
+\end{align*}
+が得られる.
+\end{prf*}
+%
+%
+\begin{bthm}\label{thm:humpty}
+辺$BC$の中点を$M$とする.
+$H$から直線$AM$に下ろした垂線の足を$P$としたとき,
+\[p=\frac{a(b^2+c^2)-bc(b+c)}{a(b+c)-2bc}\]
+である.
+また, このような点$P$は$A$-\textbf{Humpty point}と呼ばれる.
+\end{bthm}
+\begin{prf*}
+三角形$ABC$の外接円における$A$の対蹠点を$A^\prime$とし, 直線$AM$と三角形$ABC$の外接円との交点のうち$A$でない方を$D$とおく.
+\[\angle HPM=\angle A^\prime DM=\frac\pi 2\]
+および$M$が$H$と$A^\prime$との中点であることにより, $P$は$M$に関して$D$と対称である.
+
+定理\ref{thm:intersection0}により
+\[d=\frac{a-\frac{b+c}2}{a\frac{b+c}{2bc}-1}=\frac{bc(2a-b-c)}{a(b+c)-2bc}\]
+であり,
+\[p=b+c-d=\frac{a(b^2+c^2)-bc(b+c)}{a(b+c)-2bc}\]
+が得られる.
+\end{prf*}
+%
+%
+\begin{bthm}
+$A$-Humpty pointの等角共軛点を$Q$とすると,
+\[q=\frac{a^2-bc}{2a-b-c}\]
+である.
+また, このような点$Q$は$A$-\textbf{Dumpty point}と呼ばれる.
+\end{bthm}
+\begin{prf*}
+$P$を三角形$ABC$の$A$-Humpty pointとする.
+$P$と$M$, 直線$BC$に関して対称な点をそれぞれ$D$, $E$とおく.
+定理\ref{thm:humpty}の証明から, $D$は三角形$ABC$の外接円上にある.
+また, $D$と$E$とは線分$BC$の垂直二等分線に関して対称なので$E$も三角形$ABC$の外接円上にある.
+\[\measuredangle PCB=-\measuredangle ECB=\measuredangle DBC=\measuredangle DAC=\measuredangle PAC\]
+であり, 同様に
+\[\measuredangle PBC=\measuredangle PAB\]
+も成り立つ.
+これにより, $P$の等角共軛点である$Q$は
+\[\measuredangle QCA=\measuredangle QAB,\quad\measuredangle QAC=\measuredangle QBA\]
+をみたす.
+これは三角形$QCA$と三角形$QAB$とが正の向きに相似であることを意味するので, 定理\ref{thm:miquel}により
+\[q=\frac{a^2-bc}{2a-b-c}\]
+が得られる.
+\end{prf*}
+%
+%
+\begin{bthm}
+$B$から直線$AC$に下ろした垂線の足, $C$から直線$AB$に下ろした垂線の足をそれぞれ$H_B$, $H_C$とする.
+三角形$ABC$の外接円と三角形$AH_CH_B$の外接円との交点のうち$A$でない方を$Q$とする.
+このとき,
+\[q=\frac{bc(2a+b+c)}{ab+bc+ca}\]
+である.
+また, このような点$Q$は$A$-\textbf{queue point}と呼ばれる.
+\end{bthm}
+\begin{prf*}
+三角形$QH_CH_B$と三角形$QBC$とが正の向きに相似であることを用いる.
+定理\ref{thm:miquel}により,
+\begin{align*}
+q
+&=\frac{bh_b-ch_c}{b+h_b-c-h_c}\\
+&=\frac{bc(b(a+b+c)-ac)-bc(c(a+b+c)-ab)}{c(2b^2+b(a+b+c)-ac)-b(2c^2+c(a+b+c)-ab)}\\
+&=\frac{bc(2a+b+c)}{2bc+(b+c)a}
+\end{align*}
+と計算できる.
+\end{prf*}
+%
+%
+\subsection{内心を中心とする座標}
+\begin{bset}
+三角形$ABC$の内心を$I$, 内接円を$\omega$として, $\omega$が辺$BC$, $CA$, $AB$と接する点をそれぞれ$D$, $E$, $F$とする.
+$i=0$, $\lvert d\rvert=\lvert e\rvert=\lvert f\rvert=1$となるような座標を考える.
+\end{bset}
+%
+\begin{bthm}
+\begin{equation}
+a=\frac{2ef}{e+f},\quad b=\frac{2fd}{f+d},\quad c=\frac{2de}{d+e}
+\end{equation}
+である.
+\end{bthm}
+\begin{prf*}
+系\ref{cor:tangents}より従う.
+\end{prf*}
+%
+\begin{bthm}\label{thm:excenter-i}
+角$A$内の傍心を$I_A$とすると,
+\begin{equation}
+i_a=\frac{4def}{(d+e)(d+f)}
+\end{equation}
+である.
+\end{bthm}
+\begin{prf*}
+三角形$ABI$と三角形$AI_AC$とは正の向きに相似であることに注意すると,
+\[i_a-a=\frac{(b-a)(c-a)}{i-a}=\frac{\frac{2f^2(d-e)}{(d+f)(e+f)}\cdot\frac{2e^2(d-f)}{(d+e)(e+f)}}{-\frac{2ef}{e+f}}=-\frac{2ef(d-e)(d-f)}{(d+e)(d+f)(e+f)}\]
+となり,
+\[i_a=-\frac{2ef(d-e)(d-f)}{(d+e)(d+f)(e+f)}+\frac{2ef}{e+f}=\frac{4def}{(d+e)(d+f)}\]
+が得られる.
+\end{prf*}
+%
+\begin{bthm}\label{thm:circumcenter-i}
+三角形$ABC$の外心を$O$とすると,
+\begin{equation}
+o=\frac{2def(d+e+f)}{(d+e)(e+f)(f+d)}
+\end{equation}
+である.
+\end{bthm}
+\begin{prf*}
+定理\ref{thm:circumcenter}により,
+\[o=-\frac{\begin{vmatrix}a\bar{a}&a&1\\b\bar{b}&b&1\\c\bar{c}&c&1\end{vmatrix}}{\begin{vmatrix}a&\bar{a}&1\\b&\bar{b}&1\\c&\bar{c}&1\end{vmatrix}}\]
+である.
+\begin{align*}
+\begin{vmatrix}a&\bar{a}&1\\b&\bar{b}&1\\c&\bar{c}&1\end{vmatrix}
+&=\begin{vmatrix}\frac{2ef}{e+f}&\frac{2}{e+f}&1\\\frac{2fd}{f+d}&\frac{2}{f+d}&1\\\frac{2de}{d+e}&\frac{2}{d+e}&1\end{vmatrix}\\
+&=\frac{4}{(d+e)(e+f)(f+d)}\begin{vmatrix}ef&1&e+f\\fd&1&f+d\\de&1&d+e\end{vmatrix}\\
+&=-\frac{4(e-d)(f-d)(f-e)}{(d+e)(e+f)(f+d)}\\
+\end{align*}
+である.
+また, 例\ref{eg:det_322}により
+\begin{align*}
+\begin{vmatrix}a\bar{a}&a&1\\b\bar{b}&b&1\\c\bar{c}&c&1\end{vmatrix}
+&=\begin{vmatrix}\frac{4ef}{(e+f)^2}&\frac{2ef}{e+f}&1\\\frac{4fd}{(f+d)^2}&\frac{2fd}{f+d}&1\\\frac{4de}{(d+e)^2}&\frac{2de}{d+e}&1\end{vmatrix}\\
+&=\frac{8}{(d+e)^2(e+f)^2(f+d)^2}\begin{vmatrix}ef&ef(e+f)&(e+f)^2\\fd&fd(f+d)&(f+d)^2\\de&de(d+e)&(d+e)^2\end{vmatrix}\\
+&=\frac{8def(d+e+f)(e-d)(f-d)(f-e)}{(d+e)^2(e+f)^2(f+d)^2}\\
+\end{align*}
+である.
+したがって,
+\[o=\frac{2def(d+e+f)}{(d+e)(e+f)(f+d)}\]
+が得られる.
+\end{prf*}
+\begin{prff*}
+同一法により示す.
+$o^\prime=\frac{2def(d+e+f)}{(d+e)(e+f)(f+d)}$とおく.
+このとき,
+\begin{align*}
+a-o^\prime
+&=\frac{2ef}{e+f}-\frac{2def(d+e+f)}{(d+e)(e+f)(f+d)}\\
+&=\frac{2ef}{(d+e)(e+f)(f+d)}\bigl((d+e)(d+f)-d(d+e+f)\bigr)\\
+&=\frac{2e^2f^2}{(d+e)(e+f)(f+d)}
+\end{align*}
+である.
+これの絶対値は$d$, $e$, $f$に関して対称なので$O^\prime$は外心である.
+したがって, $o=\frac{2def(d+e+f)}{(d+e)(e+f)(f+d)}$が示された.
+\end{prff*}
+%
+\begin{bthm}
+三角形$ABC$の重心, 垂心をそれぞれ$G$, $H$とすると,
+\[g=\frac{6def(d+e+f)+2d^2e^2+2e^2f^2+2f^2d^2}{3(d+e)(e+f)(f+d)},\quad h=\frac{2def(d+e+f)+2d^2e^2+2e^2f^2+2f^2d^2}{(d+e)(e+f)(f+d)}\]
+である.
+\end{bthm}
+\begin{prf*}
+\[g=\frac 13\biggl(\frac{2ef}{e+f}+\frac{2fd}{f+d}+\frac{2de}{d+e}\biggr)=\frac{6def(d+e+f)+2d^2e^2+2e^2f^2+2f^2d^2}{3(d+e)(e+f)(f+d)}\]
+である.
+また, $h=3g-2o$なので
+\[h=\frac{2def(d+e+f)+2d^2e^2+2e^2f^2+2f^2d^2}{(d+e)(e+f)(f+d)}\]
+である.
+\end{prf*}
+%
+\begin{bprop}\label{prop:translation-io}
+$F(x,y,z)$, $G(x,y,z)$を$1$次の斉次有理式とする.
+外心を中心とした座標で$F(a,b,c)$と表される点は, 内心を中心とする座標では
+\[\frac{2}{(d+e)(e+f)(f+d)}\bigl(F(e^2f^2,f^2d^2,d^2e^2)+def(d+e+f)\bigr)\]
+と表せる.
+また, 内心を中心とした座標で$G(d,e,f)$と表される点は, 外心を中心とする座標では定理\ref{thm:incenter-o}の符号の定め方のもとで
+\[\frac{(\sqrt{a}+\sqrt{b})(\sqrt{b}+\sqrt{c})(\sqrt{c}+\sqrt{a})}{2}G\biggl(\frac{1}{\sqrt{a}},\frac{1}{\sqrt{b}},\frac{1}{\sqrt{c}}\biggr)-(\sqrt{ab}+\sqrt{bc}+\sqrt{ca})\]
+と表せる.
+\end{bprop}
+\begin{prf*}
+点$P$が外心を中心とした座標で$p=F(a,b,c)$と表せるとする.
+このとき,
+\[p=F(a-o,b-o,c-o)+o\]
+であり, この表式は座標の取り方(原点の位置, 実軸の向き, スケール)によって変化しない.
+実際, 座標の取り換えは$(a,b,c,o,p)$を$(\alpha a+\beta,\alpha b+\beta,\alpha c+\beta,\alpha o+\beta,\alpha p+\beta)$に置き換えることに対応しており, $F$が$1$次の斉次式であることからこの変換によって$p$の表式は変化しない.
+したがって, 内心を中心とする座標でも上の表式を使うことができ, $a=\frac{2ef}{e+f}$, $b=\frac{2fd}{f+d}$, $c=\frac{2de}{d+e}$, $o=\frac{2def(d+e+f)}{(d+e)(e+f)(f+d)}$を代入すると
+\begin{align*}
+p
+&=F\biggl(\frac{2e^2f^2}{(d+e)(e+f)(f+d)},\frac{2f^2d^2}{(d+e)(e+f)(f+d)},\frac{2d^2e^2}{(d+e)(e+f)(f+d)}\biggr)\\
+&\phantom{{}={}}+\frac{2def(d+e+f)}{(d+e)(e+f)(f+d)}\\
+&=\frac{2}{(d+e)(e+f)(f+d)}\bigl(F(e^2f^2,f^2d^2,d^2e^2)+def(d+e+f)\bigr)
+\end{align*}
+が得られる.
+
+点$Q$が内心を中心とした座標で$q=G(d,e,f)$と表せるとする.
+このとき,
+\[q=G(d-i,e-i,f-i)+i\]
+であり, この表式は外心を中心とした座標でも使うことができる.
+\begin{align*}
+d-i
+&=\frac 12(b+c-i-bc\bar{i})\\
+&=\frac{\sqrt{a}(b+c)+\sqrt{a}(\sqrt{ab}+\sqrt{bc}+\sqrt{ca})+\sqrt{bc}(\sqrt{a}+\sqrt{b}+\sqrt{c})}{2\sqrt{a}}\\
+&=\frac{(\sqrt{a}+\sqrt{b})(\sqrt{b}+\sqrt{c})(\sqrt{c}+\sqrt{a})}{2\sqrt{a}}
+\end{align*}
+であり, 同様にして$e-i=\frac{(\sqrt{a}+\sqrt{b})(\sqrt{b}+\sqrt{c})(\sqrt{c}+\sqrt{a})}{2\sqrt{b}}$, $f-i=\frac{(\sqrt{a}+\sqrt{b})(\sqrt{b}+\sqrt{c})(\sqrt{c}+\sqrt{a})}{2\sqrt{c}}$もわかる.
+これらを代入すると,
+\begin{align*}
+q
+&=G(d-i,e-i,f-i)+i\\
+&=\frac{(\sqrt{a}+\sqrt{b})(\sqrt{b}+\sqrt{c})(\sqrt{c}+\sqrt{a})}{2}G\biggl(\frac{1}{\sqrt{a}},\frac{1}{\sqrt{b}},\frac{1}{\sqrt{c}}\biggr)-(\sqrt{ab}+\sqrt{bc}+\sqrt{ca})
+\end{align*}
+が得られる.
+\end{prf*}
+%
+\begin{bthm}
+三角形$ABC$のGergonne点を$Ge$とすると,
+\[g_e=\frac{d^2e^2+e^2f^2+f^2d^2-def(d+e+f)}{d^2e+d^2f+e^2f+e^2d+f^2d+f^2e-6def}\]
+である.
+\end{bthm}
+\begin{prf*}
+$Ge$は三角形$DEF$のLemoine点なので, 定理\ref{thm:lemoine}により,
+\[g_e=\frac{d^2e^2+e^2f^2+f^2d^2-def(d+e+f)}{d^2e+d^2f+e^2f+e^2d+f^2d+f^2e-6def}\]
+が得られる.
+\end{prf*}
+%
+\begin{bthm}
+三角形$ABC$の外接円と三角形$AEF$の外接円との交点のうち$A$でない方を$K$とする.
+このとき,
+\[k=\frac{2def}{-d^2+de+df+ef}\]
+である.
+また, このような点$K$は$A$-\textbf{sharky-devil point}と呼ばれる.
+\end{bthm}
+\begin{prf*}
+三角形$KBC$と三角形$KFE$とが正の向きに相似であることを用いる.
+定理\ref{thm:miquel}により,
+\begin{align*}
+k
+&=\frac{be-cf}{b+e-c-f}\\
+&=\frac{2def(d+e)-2def(d+f)}{(d+e)(2df+e(d+f))-(d+f)(2de+f(d+e))}\\
+&=\frac{2def}{(d+e)(d+f)-2d^2}\\
+&=\frac{2def}{-d^2+de+df+ef}
+\end{align*}
+と計算できる.
+\end{prf*}
+%
+\begin{bthm}
+三角形$ABC$の角$A$内の混線内接円が辺$AB$, 辺$AC$, 三角形$ABC$の外接円と接する点をそれぞれ$K$, $L$, $T$とする.
+このとき,
+\[k=\frac{2ef}{e-f},\quad l=\frac{2ef}{f-e},\quad t=\frac{2def}{de+df+2ef}\]
+である.
+\end{bthm}
+\begin{prf*}
+$C$を含まない弧$AB$の中点, $B$を含まない弧$AC$の中点をそれぞれ$M_C$, $M_B$とおく.
+$T$を中心とする相似拡大によって三角形$ABC$の混線内接円を外接円にうつすとき, 点$K$は$M_C$にうつるので, $M_C$, $K$, $T$は共線である.
+同様に, $M_B$, $L$, $T$は共線である.
+$ABM_BTM_CC$にPascalの定理を適用すると$K$, $I$, $L$の共線がわかり, さらに, $AK=AL$により直線$AI$と直線$KL$とは垂直である.
+
+$K$は$l(f,f)$と$l(\sqrt{-ef},-\sqrt{-ef})$との交点なので
+\[k=\frac{-2ef^2}{f^2-ef}=\frac{2ef}{e-f}\]
+である.
+同様に,
+\[l=\frac{2ef}{f-e}\]
+である.
+
+$T$は直線$M_CK$と直線$M_BL$との交点であり, 定理\ref{thm:excenter-i}により
+\[m_c=\frac{2def}{(d+f)(e+f)},\quad m_b=\frac{2def}{(d+e)(e+f)}\]
+であるので,
+\begin{align*}
+t
+&=\frac{(\bar km_c-\bar m_ck)(l-m_b)-(\bar lm_b-\bar m_bl)(k-m_c)}{(\bar k-\bar m_c)(l-m_b)-(\bar l-\bar m_b)(k-m_c)}\\
+&=\frac{1}{(-\frac{2}{e-f}-\frac{2f}{(d+f)(e+f)})(\frac{2ef}{f-e}-\frac{2def}{(d+e)(e+f)})-(-\frac{2}{f-e}-\frac{2e}{(d+e)(e+f)})(\frac{2ef}{e-f}-\frac{2def}{(d+f)(e+f)})}\\
+&\phantom{{}={}}\times\Biggl(\biggl(-\frac{2}{e-f}\frac{2def}{(d+f)(e+f)}-\frac{2f}{(d+f)(e+f)}\frac{2ef}{e-f}\biggr)\biggl(\frac{2ef}{f-e}-\frac{2def}{(d+e)(e+f)}\biggr)\\
+&\phantom{=\times\Biggl(}-\biggl(-\frac{2}{f-e}\frac{2def}{(d+e)(e+f)}-\frac{2e}{(d+e)(e+f)}\frac{2ef}{f-e}\biggr)\biggl(\frac{2ef}{e-f}-\frac{2def}{(d+f)(e+f)}\biggr)\Biggr)\\
+&=\frac{2ef\bigl(-(d+f)e(2d+e+f)+(d+e)f(2d+e+f)\bigr)}{-(de+df+2ef)e(2d+e+f)+(de+df+2ef)f(2d+e+f)}\\
+&=\frac{2def}{de+df+2ef}
+\end{align*}
+と計算できる.
+\end{prf*}
+%
+\begin{bthm}\label{thm:feuerbach}
+三角形$ABC$のFeuerbach点を$F_e$とすると,
+\[f_e=\frac{de+ef+fd}{d+e+f}\]
+である.
+\end{bthm}
+\begin{prf*}
+$F_e$が内接円上にあるので$\lvert f_e\rvert=1$である.
+辺$AB$の中点の座標は
+\[\frac{ef}{e+f}+\frac{df}{d+f}=\frac{f(2de+df+ef)}{(d+f)(e+f)}\]
+であり, 辺$BC$, $CA$についても同様である.
+$f_e$が九点円上にあることは$\frac{f(2de+df+ef)}{(d+f)(e+f)}$, $\frac{d(2ef+ed+fd)}{(e+d)(f+d)}$, $\frac{e(2fd+fe+de)}{(f+e)(d+e)}$, $f_e$が共円であることと同値で,
+\[\begin{vmatrix}
+1&f_e&\frac 1{f_e}&1\\
+\frac{d(2ef+ed+fd)(2d+e+f)}{(e+d)^2(f+d)^2}&\frac{d(2ef+ed+fd)}{(e+d)(f+d)}&\frac{(2d+e+f)}{(e+d)(f+d)}&1\\
+\frac{e(2fd+fe+de)(2e+f+d)}{(f+e)^2(d+e)^2}&\frac{e(2fd+fe+de)}{(f+e)(d+e)}&\frac{(2e+f+d)}{(f+e)(d+e)}&1\\
+\frac{f(2de+df+ef)(2f+d+e)}{(d+f)^2(e+f)^2}&\frac{f(2de+df+ef)}{(d+f)(e+f)}&\frac{(2f+d+e)}{(d+f)(e+f)}&1
+\end{vmatrix}=0\]
+と同値である.
+第$1$列で余因子展開することによってこの行列式を計算する.
+$s=d+e+f$, $t=de+ef+fd$, $u=def$とおく.
+第$1$項は,
+\begin{align*}
+&\phantom{{}={}}\begin{vmatrix}
+\frac{d(2ef+ed+fd)}{(e+d)(f+d)}&\frac{(2d+e+f)}{(e+d)(f+d)}&1\\
+\frac{e(2fd+fe+de)}{(f+e)(d+e)}&\frac{(2e+f+d)}{(f+e)(d+e)}&1\\
+\frac{f(2de+df+ef)}{(d+f)(e+f)}&\frac{(2f+d+e)}{(d+f)(e+f)}&1
+\end{vmatrix}\\
+&=\frac{1}{(d+e)^2(e+f)^2(f+d)^2}\\
+&\phantom{{}={}}\times\begin{vmatrix}
+d(2ef+ed+fd)&(2d+e+f)&(e+d)(f+d)\\
+e(2fd+fe+de)&(2e+f+d)&(f+e)(d+e)\\
+f(2de+df+ef)&(2f+d+e)&(d+f)(e+f)
+\end{vmatrix}\\
+&=\frac{1}{(d+e)^2(e+f)^2(f+d)^2}\begin{vmatrix}
+td+u&d+s&d^2+t\\
+te+u&e+s&e^2+t\\
+tf+u&f+s&f^2+t
+\end{vmatrix}\\
+&=-\frac{(st-u)}{(d+e)^2(e+f)^2(f+d)^2}\begin{vmatrix}
+1&d&d^2\\
+1&e&e^2\\
+1&f&f^2
+\end{vmatrix}\\
+&=-\frac{(e-d)(f-d)(f-e)}{(d+e)^2(e+f)^2(f+d)^2}(st-u).
+\end{align*}
+%
+第$2$項は,
+\begin{align*}
+&\phantom{{}={}}\begin{vmatrix}
+\frac{d(2ef+ed+fd)(2d+e+f)}{(e+d)^2(f+d)^2}&\frac{(2d+e+f)}{(e+d)(f+d)}&1\\
+\frac{e(2fd+fe+de)(2e+f+d)}{(f+e)^2(d+e)^2}&\frac{(2e+f+d)}{(f+e)(d+e)}&1\\
+\frac{f(2de+df+ef)(2f+d+e)}{(d+f)^2(e+f)^2}&\frac{(2f+d+e)}{(d+f)(e+f)}&1
+\end{vmatrix}\\
+&=\frac{1}{(d+e)^4(e+f)^4(f+d)^4}\\
+&\phantom{{}={}}\times\begin{vmatrix}
+d(2ef+ed+fd)(2d+e+f)&(2d+e+f)(e+d)(f+d)&(e+d)^2(f+d)^2\\
+e(2fd+fe+de)(2e+f+d)&(2e+f+d)(f+e)(d+e)&(f+e)^2(d+e)^2\\
+f(2de+df+ef)(2f+d+e)&(2f+d+e)(d+f)(e+f)&(d+f)^2(e+f)^2
+\end{vmatrix}\\
+&=\frac{1}{(d+e)^4(e+f)^4(f+d)^4}\\
+&\phantom{{}={}}\times\begin{vmatrix}
+td^2+(st+u)d+su&2sd^2+st+u&(s^2+t)d^2+(u-st)d+su+t^2\\
+te^2+(st+u)e+su&2se^2+st+u&(s^2+t)e^2+(u-st)e+su+t^2\\
+tf^2+(st+u)f+su&2sf^2+st+u&(s^2+t)f^2+(u-st)f+su+t^2
+\end{vmatrix}\\
+&=\frac{1}{(d+e)^4(e+f)^4(f+d)^4}
+\begin{vmatrix}
+1&d&d^2\\
+1&e&e^2\\
+1&f&f^2
+\end{vmatrix}
+\begin{vmatrix}
+su&st+u&su+t^2\\
+st+u&0&u-st\\
+t&2s&s^2+t
+\end{vmatrix}\\
+&=-\frac{(e-d)(f-d)(f-e)}{(d+e)^4(e+f)^4(f+d)^4}s^2(st-u)^2\\
+&=-\frac{(e-d)(f-d)(f-e)}{(d+e)^2(e+f)^2(f+d)^2}s^2.
+\end{align*}
+%
+第$3$項は,
+\begin{align*}
+&\phantom{{}={}}\begin{vmatrix}
+\frac{d(2ef+ed+fd)(2d+e+f)}{(e+d)^2(f+d)^2}&\frac{d(2ef+ed+fd)}{(e+d)(f+d)}&1\\
+\frac{e(2fd+fe+de)(2e+f+d)}{(f+e)^2(d+e)^2}&\frac{e(2fd+fe+de)}{(f+e)(d+e)}&1\\
+\frac{f(2de+df+ef)(2f+d+e)}{(d+f)^2(e+f)^2}&\frac{f(2de+df+ef)}{(d+f)(e+f)}&1
+\end{vmatrix}\\
+&=\frac{1}{(d+e)^4(e+f)^4(f+d)^4}\\
+&\phantom{{}={}}\times\begin{vmatrix}
+d(2ef+ed+fd)(2d+e+f)&d(2ef+ed+fd)(e+d)(f+d)&(e+d)^2(f+d)^2\\
+e(2fd+fe+de)(2e+f+d)&e(2fd+fe+de)(f+e)(d+e)&(f+e)^2(d+e)^2\\
+f(2de+df+ef)(2f+d+e)&f(2de+df+ef)(d+f)(e+f)&(d+f)^2(e+f)^2
+\end{vmatrix}\\
+&=\frac{1}{(d+e)^4(e+f)^4(f+d)^4}\\
+&\phantom{{}={}}\times\begin{vmatrix}
+td^2+(st+u)d+su&(st+u)d^2+2tu&(s^2+t)d^2+(u-st)d+su+t^2\\
+te^2+(st+u)e+su&(st+u)e^2+2tu&(s^2+t)e^2+(u-st)e+su+t^2\\
+tf^2+(st+u)f+su&(st+u)f^2+2tu&(s^2+t)f^2+(u-st)f+su+t^2
+\end{vmatrix}\\
+&=\frac{1}{(d+e)^4(e+f)^4(f+d)^4}
+\begin{vmatrix}
+1&d&d^2\\
+1&e&e^2\\
+1&f&f^2
+\end{vmatrix}
+\begin{vmatrix}
+su&2tu&su+t^2\\
+st+u&0&u-st\\
+t&st+u&s^2+t
+\end{vmatrix}\\
+&=\frac{(e-d)(f-d)(f-e)}{(d+e)^4(e+f)^4(f+d)^4}t^2(st-u)^2\\
+&=\frac{(e-d)(f-d)(f-e)}{(d+e)^2(e+f)^2(f+d)^2}t^2.
+\end{align*}
+%
+第$4$項は,
+\begin{align*}
+&\phantom{{}={}}\begin{vmatrix}
+\frac{d(2ef+ed+fd)(2d+e+f)}{(e+d)^2(f+d)^2}&\frac{d(2ef+ed+fd)}{(e+d)(f+d)}&\frac{(2d+e+f)}{(e+d)(f+d)}\\
+\frac{e(2fd+fe+de)(2e+f+d)}{(f+e)^2(d+e)^2}&\frac{e(2fd+fe+de)}{(f+e)(d+e)}&\frac{(2e+f+d)}{(f+e)(d+e)}\\
+\frac{f(2de+df+ef)(2f+d+e)}{(d+f)^2(e+f)^2}&\frac{f(2de+df+ef)}{(d+f)(e+f)}&\frac{(2f+d+e)}{(d+f)(e+f)}
+\end{vmatrix}\\
+&=\frac{1}{(d+e)^4(e+f)^4(f+d)^4}\\
+&\phantom{{}={}}\times\begin{vmatrix}
+d(2ef+ed+fd)(2d+e+f)&d(2ef+ed+fd)(e+d)(f+d)&(2d+e+f)(e+d)(f+d)\\
+e(2fd+fe+de)(2e+f+d)&e(2fd+fe+de)(f+e)(d+e)&(2e+f+d)(f+e)(d+e)\\
+f(2de+df+ef)(2f+d+e)&f(2de+df+ef)(d+f)(e+f)&(2f+d+e)(d+f)(e+f)
+\end{vmatrix}\\
+&=\frac{1}{(d+e)^4(e+f)^4(f+d)^4}\\
+&\phantom{{}={}}\times\begin{vmatrix}
+td^2+(st+u)d+su&(st+u)d^2+2tu&2sd^2+st+u\\
+te^2+(st+u)e+su&(st+u)e^2+2tu&2se^2+st+u\\
+tf^2+(st+u)f+su&(st+u)f^2+2tu&2sf^2+st+u
+\end{vmatrix}\\
+&=\frac{1}{(d+e)^4(e+f)^4(f+d)^4}
+\begin{vmatrix}
+1&d&d^2\\
+1&e&e^2\\
+1&f&f^2
+\end{vmatrix}
+\begin{vmatrix}
+su&2tu&st+u\\
+st+u&0&0\\
+t&st+u&2s
+\end{vmatrix}\\
+&=-\frac{(e-d)(f-d)(f-e)}{(d+e)^4(e+f)^4(f+d)^4}(st+u)(st-u)^2\\
+&=-\frac{(e-d)(f-d)(f-e)}{(d+e)^2(e+f)^2(f+d)^2}(st+u).
+\end{align*}
+%
+以上より,
+\begin{align*}
+&\phantom{{}={}}\begin{vmatrix}
+1&f_e&\frac 1{f_e}&1\\
+\frac{4d(2ef+ed+fd)(2d+e+f)}{(e+d)^2(f+d)^2}&\frac{2d(2ef+ed+fd)}{(e+d)(f+d)}&\frac{2(2d+e+f)}{(e+d)(f+d)}&1\\
+\frac{4e(2fd+fe+de)(2e+f+d)}{(f+e)^2(d+e)^2}&\frac{2e(2fd+fe+de)}{(f+e)(d+e)}&\frac{2(2e+f+d)}{(f+e)(d+e)}&1\\
+\frac{4f(2de+df+ef)(2f+d+e)}{(d+f)^2(e+f)^2}&\frac{2f(2de+df+ef)}{(d+f)(e+f)}&\frac{2(2f+d+e)}{(d+f)(e+f)}&1
+\end{vmatrix}\\
+&=\frac{(e-d)(f-d)(f-e)}{(d+e)^2(e+f)^2(f+d)^2}\biggl(-(st-u)+s^2f_e+\frac{t^2}{f_e}-(st+u)\biggr)\\
+&=\frac{(e-d)(f-d)(f-e)}{(d+e)^2(e+f)^2(f+d)^2}\frac{(sf_e-t)^2}{f_e}
+\end{align*}
+となる.
+これが$0$となるので
+\[f_e=\frac{de+ef+fd}{d+e+f}\]
+が得られる.
+\end{prf*}
+\begin{prff*}
+同一法により示す.
+九点円の中心を$N_9$とし, 辺$BC$の中点を$M$とする.
+${f_e}^\prime=\frac{de+ef+fd}{d+e+f}$により点${F_e}^\prime$を定める.
+${F_e}^\prime$が三角形$ABC$の内接円上にも九点円上にもあり, ${F_e}^\prime$, $I$, $N_9$が共線であることを示せばよい.
+
+\[\overline{\biggl(\frac{de+ef+fd}{d+e+f}\biggr)}=\frac{d+e+f}{de+ef+fd}\]
+により, $\lvert\frac{de+ef+fd}{d+e+f}\rvert=1$がわかり, ${F_e}^\prime$は三角形$ABC$の内接円上にある.
+
+外心を中心とする座標では$n_9=\frac{a+b+c}{2}$なので定理\ref{prop:translation-io}により
+\begin{align*}
+n_9
+&=\frac{2}{(d+e)(e+f)(f+d)}\biggl(\frac{d^2e^2+e^2f^2+f^2d^2}{2}+def(d+e+f)\biggr)\\
+&=\frac{(de+ef+fd)^2}{(d+e)(e+f)(f+d)}
+\end{align*}
+である.
+また,
+\[m=\frac{f(2de+df+ef)}{(d+f)(e+f)}\]
+である.
+\begin{align*}
+\frac{de+ef+fd}{d+e+f}-n_9
+&=\frac{de+ef+fd}{d+e+f}-\frac{(de+ef+fd)^2}{(d+e)(e+f)(f+d)}\\
+&=-\frac{def(de+ef+fd)}{(d+e)(e+f)(f+d)(d+e+f)}
+\end{align*}
+および
+\begin{align*}
+m-n_9
+&=\frac{f(2de+df+ef)}{(d+f)(e+f)}-\frac{(de+ef+fd)^2}{(d+e)(e+f)(f+d)}\\
+&=\frac{f(d+e)(2de+df+ef)-(de+ef+fd)^2}{(d+e)(e+f)(f+d)}\\
+&=-\frac{d^2e^2}{(d+e)(e+f)(f+d)}
+\end{align*}
+なので
+\[\biggl\lvert\frac{de+ef+fd}{d+e+f}-n_9\biggr\rvert=\lvert m-n_9\rvert\]
+が得られ, ${F_e}^\prime$は三角形$ABC$の九点円上にある.
+
+また,
+\[\frac{n_9-i}{{f_e}^\prime-i}=\frac{(d+e+f)(de+ef+fd)}{(d+e)(e+f)(f+d)}\sim\frac{def}{def}=1\]
+であるので, ${F_e}^\prime$, $I$, $N_9$は共線である.
+
+以上により, ${F_e}^\prime$はFeuerbach点であり, $f_e=\frac{de+ef+fd}{d+e+f}$が得られる.
+\end{prff*}
+%
+%
+\subsection{弧の中点を中心とする座標}
+\begin{bset}
+三角形$ABC$の内心を$I$とし, 三角形$BCI$の外心を$M_A$とする.
+$m=0$, $\lvert b\rvert=\lvert c\rvert=\lvert i\rvert=1$となる座標を考える.
+\end{bset}
+%
+\begin{bthm}
+三角形$ABC$の角$A$内の傍心, 角$B$内の傍心, 角$C$内の傍心をそれぞれ$I_A$, $I_B$, $I_C$とすると,
+\[i_a=-i,\quad i_b=\frac{2bc-bi+ci}{b+c},\quad i_c=\frac{2bc-ci+bi}{b+c}\]
+である.
+\end{bthm}
+\begin{prf*}
+$i_a=-i$は$\angle IBI_A=\angle ICI_A=\frac{\pi}{2}$から明らかである.
+$I_B$は直線$BI$と直線$CI_A$との交点なので
+\[i_b=\frac{bi(c-i)+ci(b+i)}{bi+ci}=\frac{2bc-bi+ci}{b+c}\]
+である.
+$i_c=\frac{2bc-ci+bi}{b+c}$も同様である.
+\end{prf*}
+%
+\begin{bthm}\label{thm:a-m}
+\begin{equation}
+a=\frac{bc+i^2}{b+c}
+\end{equation}
+である.
+\end{bthm}
+\begin{prf*}
+三角形$ABI$と三角形$AI_AC$とは正の向きに相似であるので, 定理\ref{thm:miquel}により,
+\[a=\frac{bc+i^2}{b+c}\]
+が得られる.
+\end{prf*}
+%
+\begin{bthm}
+三角形$ABC$の外心を$O$とすると
+\[o=\frac{bc}{b+c}\]
+である.
+\end{bthm}
+\begin{prf*}
+定理\ref{thm:circumcenter}を用いる.
+$\overline{(\frac{bc+i^2}{b+c})}=\frac{bc+i^2}{i^2(b+c)}$であることに注意する.
+\begin{align*}
+\begin{vmatrix}
+\frac{bc+i^2}{b+c}&\frac{bc+i^2}{i^2(b+c)}&1\\
+b&\frac 1b&1\\
+c&\frac 1c&1
+\end{vmatrix}
+&=\frac 1{bci^2(b+c)}
+\begin{vmatrix}
+i^2(bc+i^2)&bc+i^2&i^2(b+c)\\
+b^2&1&b\\
+c^2&1&c
+\end{vmatrix}\\
+&=\frac 1{bci^2(b+c)}
+\begin{vmatrix}
+(bc+i^2)(i^2-b^2)&0&c(i^2-b^2)\\
+b^2&1&b\\
+c^2-b^2&0&c-b
+\end{vmatrix}\\
+&=\frac{(c-b)(i^2-b^2)}{bci^2(b+c)}
+\begin{vmatrix}
+(bc+i^2)&c\\
+c+b&1
+\end{vmatrix}\\
+&=\frac{(c-b)(i^2-b^2)(i^2-c^2)}{bci^2(b+c)}
+\end{align*}
+および
+\begin{align*}
+\begin{vmatrix}
+\frac{bc+i^2}{b+c}\frac{bc+i^2}{i^2(b+c)}&\frac{bc+i^2}{b+c}&1\\
+1&b&1\\
+1&c&1
+\end{vmatrix}
+&=\frac 1{i^2(b+c)^2}
+\begin{vmatrix}
+(bc+i^2)^2&i^2(b+c)(bc+i^2)&i^2(b+c)^2\\
+1&b&1\\
+1&c&1
+\end{vmatrix}\\
+&=\frac 1{i^2(b+c)^2}
+\begin{vmatrix}
+(i^2-b^2)(i^2-c^2)&i^2(b+c)(bc+i^2)&i^2(b+c)^2\\
+0&b&1\\
+0&c&1
+\end{vmatrix}\\
+&=\frac{(i^2-b^2)(i^2-c^2)(b-c)}{i^2(b+c)^2}
+\end{align*}
+から,
+\[o=\frac{bc}{b+c}\]
+が得られる.
+\end{prf*}
+\begin{prff*}
+$\measuredangle BOC=2\measuredangle BM_AC$により
+\[\frac{c-o}{b-o}=\frac{c^2}{b^2}\]
+である.
+これにより,
+\[o=\frac{b^2c-bc^2}{b^2-c^2}=\frac{bc}{b+c}\]
+が得られる.
+\end{prff*}
+%
+%

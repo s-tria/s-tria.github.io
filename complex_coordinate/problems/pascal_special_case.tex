@@ -1,0 +1,18 @@
+\begin{bprb}
+円周$\Gamma$上に$4$点$A$, $B$, $C$, $D$がある.
+$A$, $B$, $C$, $D$における$\Gamma$の接線をそれぞれ$l_A$, $l_B$, $l_C$, $l_D$とする.
+このとき, $l_A$と$l_B$との交点, $l_C$と$l_D$との交点, 直線$AC$と直線$BD$との交点は同一直線上にあることを示せ.
+\end{bprb}
+\begin{ifsol*}
+示すべきことは$3$点$\frac{2ab}{a+b}$, $\frac{2cd}{c+d}$, $\frac{ac(b+d)-bd(a+c)}{ac-bd}$の共線であり, これらの共軛がそれぞれ$\frac{2}{a+b}$, $\frac{2}{c+d}$, $\frac{a+c-b-d}{ac-bd}$であることから示すべき式は
+\[\begin{vmatrix}2ab&2&a+b\\2cd&2&c+d\\ac(b+d)-bd(a+c)&a+c-b-d&ac-bd\end{vmatrix}=0\]
+である.
+\begin{align*}
+&\phantom{={}}\begin{gmatrix}[v]2ab&2&a+b\\2cd&2&c+d\\ac(b+d)-bd(a+c)&a+c-b-d&ac-bd\colops\add[ac]{1}{0}\add[-(a+c)]{2}{0}\end{gmatrix}\\
+&=\begin{vmatrix}2ab+2ac-(a+c)(a+b)&2&a+b\\2cd+2ac-(a+c)(c+d)&2&c+d\\0&a+c-b-d&ac-bd\end{vmatrix}\\
+&=(a-c)\begin{vmatrix}b-a&2&a+b\\c-d&2&c+d\\0&a+c-b-d&ac-bd\end{vmatrix}\\
+&=(a-c)\Bigl(-(a+c-b-d)\bigl((b-a)(c+d)-(c-d)(a+b)\bigr)+(ac-bd)(2b-2a-2c+2d)\Bigr)\\
+&=0
+\end{align*}
+と計算できるので$\frac{2ab}{a+b}$, $\frac{2cd}{c+d}$, $\frac{ac(b+d)-bd(a+c)}{ac-bd}$の共線が示された.
+\end{ifsol*}

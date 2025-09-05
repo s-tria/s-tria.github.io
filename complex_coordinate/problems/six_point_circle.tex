@@ -1,0 +1,23 @@
+\begin{bprb}
+三角形$ABC$と点$P$とがある.
+$P$から直線$BC$, $CA$, $AB$に下ろした垂線の足をそれぞれ$P_a$, $P_b$, $P_c$とし, 三角形$ABC$に関する点$P$の等角共軛点を$Q$とする.
+このとき, 三角形$P_aP_bP_c$の外心は線分$PQ$の中点であることを示せ.
+\end{bprb}
+\begin{ifsol*}
+$\lvert a\rvert=\lvert b\rvert=\lvert c\rvert=1$となるような座標で考える.
+\[p_a=\frac 12(b+c+p-bc\bar p),\quad p_b=\frac 12(c+a+p-ca\bar p),\quad p_c=\frac 12(a+b+p-ab\bar p)\]
+が成り立つ.
+また, 定理\ref{thm:isogonal_conjugate}により
+\[q=\frac{abc\bar p^2-(ab+bc+ca)\bar p+a+b+c-p}{1-p\bar p}\]
+である.
+線分$PQ$の中点を$M$とする.
+このとき,
+\begin{align*}
+m-p_a
+&=\frac 12\bigl(p+q-(b+c+p-bc\bar p)\bigr)\\
+&=\frac 1{2(1-p\bar p)}\bigl(abc\bar p^2-(ab+bc+ca)\bar p+a+b+c-p-(b+c-bc\bar p)(1-p\bar p)\bigr)\\
+&=\frac 1{2(1-p\bar p)}(p-a)(b\bar p-1)(c\bar p-1)
+\end{align*}
+と計算できる.
+これの絶対値は$a$, $b$, $c$について対称なので, 線分$PQ$の中点が三角形$P_aP_bP_c$の外心であることが示された.
+\end{ifsol*}

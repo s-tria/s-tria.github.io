@@ -1,0 +1,74 @@
+\begin{bprb}[ISL2024-G5]
+三角形$ABC$とその内心$I$とがあり, 三角形$BIC$の外接円を$\Omega$とする.
+$K$は辺$BC$上(端点を除く)の点で, $\angle BAK<\angle KAC$をみたす.
+$\angle BKA$の二等分線は$\Omega$と$2$点$W$, $X$で交わり, $\angle CKA$の二等分線は$\Omega$と$2$点$Y$, $Z$で交わった.
+ただし, $W$および$Y$は直線$BC$に関して$A$と同じ側にあるとする.
+このとき, $\angle WAY=\angle ZAX$を示せ.
+\end{bprb}
+\begin{ifsol*}
+$\lvert b\rvert=\lvert c\rvert=\lvert i\rvert=1$となるような座標で考える.
+定理\ref{thm:a-m}により$a=\frac{bc+i^2}{b+c}$である.
+$\angle WAY=\measuredangle WAY$および$\angle ZAX=\measuredangle ZAX$が成り立つので, 示すべきことは$(w-a)(x-a)\sim(y-a)(z-a)$である.
+
+直線$AK$と$\Omega$との交点を$P$, $Q$とする.
+$A$は直線$PQ$上にあるので$l(p,q)$, $l(i,-i)$, $l(b,i^2/c)$は共線である.
+したがって, 系\ref{cor:concurrency2}により
+\begin{align*}
+0
+&=\begin{vmatrix}
+pq&p+q&1\\
+-i^2&0&1\\
+\frac{bi^2}c&b+\frac{i^2}c&1
+\end{vmatrix}\\
+&=\frac 1c\begin{vmatrix}
+pq&p+q&1\\
+-i^2&0&1\\
+bi^2&bc+i^2&c
+\end{vmatrix}\\
+&=\frac 1c\begin{vmatrix}
+pq+i^2&p+q&0\\
+-i^2&0&1\\
+(b+c)i^2&bc+i^2&0
+\end{vmatrix}\\
+&=\frac{(p+q)(b+c)i^2-(pq+i^2)(bc+i^2)}{c}
+\end{align*}
+である.
+これにより,
+\[p+q=\frac{(pq+i^2)(bc+i^2)}{(b+c)i^2}\]
+である.
+
+直線$WX$は$\angle BKA$の二等分線なので$(wx)^2=bcpq$である.
+$wx=\sqrt{bcpq}$, $yz=-\sqrt{bcpq}$となるように$\sqrt{bcpq}$の符号を定める.
+直線$BC$, $PQ$, $WX$, $YZ$は共点なので
+\[\begin{vmatrix}wx&w+x&1\\pq&p+q&1\\bc&b+c&1\end{vmatrix}=\begin{vmatrix}yz&y+z&1\\pq&p+q&1\\bc&b+c&1\end{vmatrix}=0\]
+が成り立つ.
+これにより
+\[w+x=\frac{wx(p+q-b-c)+pq(b+c)-bc(p+q)}{pq-bc}\]
+が成り立つ.
+
+以上をあわせると
+\begin{align*}
+(w-a)(x-a)
+&=wx-(w+x)\frac{bc+i^2}{b+c}+\biggl(\frac{bc+i^2}{b+c}\biggr)^2\\
+&=wx-\frac{bc+i^2}{b+c}\frac{wx(p+q-b-c)+pq(b+c)-bc(p+q)}{pq-bc}+\biggl(\frac{bc+i^2}{b+c}\biggr)^2\\
+&=wx-\frac{bc+i^2}{b+c}\frac{wx\Bigl(\frac{(pq+i^2)(bc+i^2)}{(b+c)i^2}-b-c\Bigr)+pq(b+c)-bc\frac{(pq+i^2)(bc+i^2)}{(b+c)i^2}}{pq-bc}+\biggl(\frac{bc+i^2}{b+c}\biggr)^2\\
+&=\frac 1{(b+c)^2i^2(pq-bc)}\biggl(\Bigl((b+c)^2i^2(pq-bc)-(bc+i^2)\bigl((pq+i^2)(bc+i^2)-(b+c)^2i^2\bigr)\Bigr)wx\\
+&\qquad\qquad-(bc+i^2)\bigl(pq(b+c)^2i^2-bc(pq+i^2)(bc+i^2)\bigr)+(bc+i^2)^2i^2(pq-bc)\biggr)\\
+&=\frac 1{(b+c)^2i^2(pq-bc)}\biggl(\Bigl(-i^6+(b^2+c^2-pq)i^4+(b^2pq+c^2pq-b^2c^2)i^2-b^2c^2pq\Bigr)wx\\
+&\qquad\qquad+\Bigl(i^6-(b^2-bc+c^2)i^4-(b^2-bc+c^2)bci^2+b^3c^3\Bigr)pq\biggr)
+\end{align*}
+と計算できる.
+\begin{align*}
+-i^6+(b^2+c^2-pq)i^4+(b^2pq+c^2pq-b^2c^2)i^2-b^2c^2pq&\sim i^3bc\sqrt{pq},\\
+i^6-(b^2-bc+c^2)i^4-(b^2-bc+c^2)bci^2+b^3c^3&\sim i^3bc\sqrt{bc}
+\end{align*}
+から
+\[(w-a)(x-a)\sim\frac{i^3bcpq\sqrt{bc}}{(b+c)^2i^2(pq-bc)}\]
+がわかる.
+$(y-a)(z-a)$は$(w-a)(x-a)$において$\sqrt{bcpq}$を$-\sqrt{bcpq}$に変えたものなので
+\[(y-a)(z-a)\sim\frac{i^3bcpq\sqrt{bc}}{(b+c)^2i^2(pq-bc)}\]
+もわかる.
+したがって,
+\[(w-a)(x-a)\sim(y-a)(z-a)\]
+が示された.
+\end{ifsol*}

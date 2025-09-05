@@ -1,0 +1,19 @@
+\begin{bprb}[Newtonの定理]
+四角形$ABCD$が円$\Gamma$に外接している.
+対角線$AC$の中点を$M$, 対角線$BD$の中点を$N$とする.
+$M\neq N$であるとき, 円$\Gamma$の中心は直線$MN$上にあることを示せ.
+\end{bprb}
+\begin{ifsol*}
+$\Gamma$が単位円となるような座標で考える.
+円$\Gamma$と辺$AB$, $BC$, $CD$, $DA$との接点をそれぞれ$X$, $Y$, $Z$, $W$とおく.
+このとき,
+\[a=\frac{2wx}{w+x},\quad b=\frac{2xy}{x+y},\quad c=\frac{2yz}{y+z},\quad d=\frac{2zw}{z+w}\]
+であり,
+\[m=\frac{(y+z)wx+(w+x)yz}{(w+x)(y+z)},\quad n=\frac{(z+w)xy+(x+y)zw}{(x+y)(z+w)}\]
+が得られる.
+これにより,
+\begin{align*}
+\frac nm=\frac{(w+x)(y+z)}{(x+y)(z+w)}\sim\frac{\sqrt{wx}\sqrt{yz}}{\sqrt{xy}\sqrt{zw}}=1
+\end{align*}
+であり, $0$, $m$, $n$は共線である.
+\end{ifsol*}

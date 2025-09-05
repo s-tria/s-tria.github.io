@@ -1,0 +1,64 @@
+\begin{bprb}[JMO春合宿2025-6, ISL2024-G7]\plabel{prb:isl2024-g7}
+$AB<AC<BC$をみたす三角形$ABC$の内心を$I$とし, 直線$AI$, $BI$, $CI$と三角形$ABC$の外接円の交点のうち, それぞれ$A$, $B$, $C$でない方を$M_A$, $M_B$, $M_C$とする.
+直線$AI$と辺$BC$が点$D$で交わっており, 半直線$BM_C$と半直線$CM_B$が点$X$で交わっている.
+また, 三角形$XBC$の外接円と三角形$XM_BM_C$の外接円が$X$でない点$S$で交わっており, 直線$BX$, $CX$と三角形$SM_AX$の外接円の交点のうち, $X$でない方をそれぞれ$P$, $Q$とする.
+このとき, 三角形$DIS$の外心は直線$PQ$上にあることを示せ.
+\end{bprb}
+\begin{ifsol*}
+$\lvert a\rvert=\lvert b\rvert=\lvert c\rvert=1$となるような座標で考える.
+$m_a=-\sqrt{bc}$, $m_b=-\sqrt{ca}$, $m_c=-\sqrt{ab}$となるように$\sqrt a$, $\sqrt b$, $\sqrt c$の符号を定める.
+
+$S$の定義により, $S$は四角形$BCM_BM_C$のMiquel点であり, $\triangle IBC\sim\triangle AM_CM_B$に注意すると, $4$点$(S,A,M_C,M_B)$と$(S,I,B,C)$とは相似である.
+さらに, $\triangle SM_CM_B\sim\triangle SBC\sim\triangle SPQ$が成り立つ.
+
+$\triangle BIC\sim\triangle PDQ$を示す.
+$3$点$(M_C,B,P^\prime)$と$3$点$(A,I,D)$とが相似になるように点$P^\prime$をとる.
+$P^\prime$が三角形$SM_AX$の外接円上にあることを示せば, $P^\prime=P$がわかり, $\triangle SPD\sim\triangle SBI$が示される.
+同様の方法で$\triangle SQD\sim\triangle SCI$も示されるので, $\triangle BIC\sim\triangle PDQ$が導かれる.
+したがって, $\triangle BIC\sim\triangle PDQ$を示すには$S$, $M_A$, $X$, $P^\prime$が共円であることを示せば十分である.
+また, $\measuredangle XP^\prime S=\measuredangle M_CP^\prime S=\measuredangle ADS$なので, 示すべき式は
+\[\measuredangle ADS=\measuredangle XM_AS\]
+である.
+
+$D$は$l(b,c)$と$l(a,m_a)$との交点なので
+\[d=\frac{bc(a-\sqrt{bc})+a\sqrt{bc}(b+c)}{bc+a\sqrt{bc}}=\frac{ab+ac-bc+a\sqrt{bc}}{a+\sqrt{bc}}\]
+である.
+$S$は四角形$BCM_BM_C$のMiquel点なので
+\[s=\frac{bm_b-cm_c}{b+m_b-c-m_c}=\frac{c\sqrt{ba}-b\sqrt{ca}}{b+\sqrt{ca}-c-\sqrt{ba}}=-\frac{\sqrt{abc}}{\sqrt{a}+\sqrt{b}+\sqrt{c}}\]
+である.
+$X$は$l(b,m_c)$と$l(c,m_b)$との交点なので
+\[x=\frac{-b\sqrt{ba}(c-\sqrt{ca})+c\sqrt{ca}(b-\sqrt{ba})}{-b\sqrt{ba}+c\sqrt{ca}}=\frac{\sqrt{bc}(\sqrt{bc}-\sqrt{ba}-\sqrt{ca})}{b+\sqrt{bc}+c}\]
+である.
+以上により,
+\[a-d\sim a+\sqrt{bc}\sim\sqrt{a\sqrt{bc}},\]
+\begin{align*}
+s-d
+&=\frac{-\sqrt{abc}(a+\sqrt{bc})-(ab+ac-bc+a\sqrt{bc})(\sqrt{a}+\sqrt{b}+\sqrt{c})}{(\sqrt{a}+\sqrt{b}+\sqrt{c})(a+\sqrt{bc})}\\
+% &=\frac{-(\sqrt{b}+\sqrt{c})^2a\sqrt{a}-(b+\sqrt{bc}+c)(\sqrt{b}+\sqrt{c})a+bc(\sqrt{b}+\sqrt{c})}{(\sqrt{a}+\sqrt{b}+\sqrt{c})(a+\sqrt{bc})}\\
+% &=-\frac{(\sqrt{b}+\sqrt{c})\bigl((\sqrt{b}+\sqrt{c})a\sqrt{a}+(b+\sqrt{bc}+c)a-bc\bigr)}{(\sqrt{a}+\sqrt{b}+\sqrt{c})(a+\sqrt{bc})}\\
+% &=-\frac{(\sqrt{b}+\sqrt{c})(\sqrt{a}+\sqrt{b})\bigl((\sqrt{b}+\sqrt{c})a+c\sqrt{a}-c\sqrt{b}\bigr)}{(\sqrt{a}+\sqrt{b}+\sqrt{c})(a+\sqrt{bc})}\\
+&=-\frac{(\sqrt{b}+\sqrt{c})(\sqrt{a}+\sqrt{b})(\sqrt{a}+\sqrt{c})(\sqrt{ab}+\sqrt{ac}-\sqrt{bc})}{(\sqrt{a}+\sqrt{b}+\sqrt{c})(a+\sqrt{bc})}\\
+&\sim\sqrt{\sqrt{bc}}\frac{\sqrt{ab}+\sqrt{ac}-\sqrt{bc}}{\sqrt{a}+\sqrt{b}+\sqrt{c}},
+\end{align*}
+\begin{align*}
+x-m_a
+&=\frac{\sqrt{bc}(\sqrt{bc}-\sqrt{ba}-\sqrt{ca})+\sqrt{bc}(b+\sqrt{bc}+c)}{b+\sqrt{bc}+c}\\
+&=\frac{\sqrt{bc}(\sqrt{b}+\sqrt{c})(\sqrt{b}+\sqrt{c}-\sqrt{a})}{b+\sqrt{bc}+c}\\
+&\sim\sqrt{\sqrt{bc}}(\sqrt{b}+\sqrt{c}-\sqrt{a}),
+\end{align*}
+\[s-m_a=\frac{-\sqrt{abc}+\sqrt{bc}(\sqrt{a}+\sqrt{b}+\sqrt{c})}{\sqrt{a}+\sqrt{b}+\sqrt{c}}=\frac{\sqrt{bc}(\sqrt{b}+\sqrt{c})}{\sqrt{a}+\sqrt{b}+\sqrt{c}}\sim\frac{\sqrt{bc}\sqrt{\sqrt{bc}}}{\sqrt{a}+\sqrt{b}+\sqrt{c}}\]
+が成り立つので
+\[\frac{a-d}{s-d}\frac{s-m_a}{x-m_a}\sim\frac{\sqrt{abc}}{(\sqrt{ab}+\sqrt{ac}-\sqrt{bc})(\sqrt{b}+\sqrt{c}-\sqrt{a})}\]
+である.
+右辺は共軛をとっても変化しないため実数である.
+したがって,
+\[\measuredangle ADS=\measuredangle XM_AS\]
+が示された.
+
+これにより, $S$, $M_A$, $X$, $P^\prime$は共円であり, $\triangle BIC\sim\triangle PDQ$である.
+
+直線$PQ$に関して$D$と対称な点を$E$とする.
+$A$と$I$とは直線$M_BM_C$に関して対称なことに注意すると, $(S,A,M_C,M_B,I)$と$(S,D,P,Q,E)$とは相似である.
+\[\measuredangle DES=\measuredangle AIS=\measuredangle DIS\]
+となるので$E$は三角形$DIS$の外接円上にあり, 三角形$DIS$の外心は線分$DE$の垂直二等分線, すなわち直線$PQ$上にある.
+\end{ifsol*}

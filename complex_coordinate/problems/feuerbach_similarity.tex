@@ -1,0 +1,49 @@
+\begin{bprb}
+三角形$ABC$の内心を$I$, 外心を$O$, Feuerbach点を$F_e$とする.
+辺$BC$の中点を$M$, 三角形$ABC$の内接円が辺$BC$と接する点を$D$とするとき, 三角形$AIO$と三角形$F_eDM$とは相似であることを示せ.
+\end{bprb}
+\begin{ifsol*}
+$i=0$, $\lvert d\rvert=1$となるような座標で考える.
+定理\ref{thm:circumcenter-i}, 定理\ref{thm:feuerbach}により
+\begin{align*}
+a&=\frac{2ef}{e+f},\\
+i&=0,\\
+o&=\frac{2def(d+e+f)}{(d+e)(e+f)(f+d)},\\
+f_e&=\frac{de+ef+fd}{d+e+f},\\
+d&=d,\\
+m&=\frac{d(de+df+2ef)}{(d+e)(d+f)}
+\end{align*}
+である.
+示すべき式は
+\[\begin{vmatrix}
+\frac{2ef}{e+f}&\frac{de+ef+fd}{d+e+f}&1\\
+0&d&1\\
+\frac{2def(d+e+f)}{(d+e)(e+f)(f+d)}&\frac{d(de+df+2ef)}{(d+e)(d+f)}&1
+\end{vmatrix}=0\]
+である.
+
+\begin{align*}
+&\phantom{={}}\begin{vmatrix}
+\frac{2ef}{e+f}&\frac{de+ef+fd}{d+e+f}&1\\
+0&d&1\\
+\frac{2def(d+e+f)}{(d+e)(e+f)(f+d)}&\frac{d(de+df+2ef)}{(d+e)(d+f)}&1
+\end{vmatrix}\\
+&=\frac{2ef}{(d+e)(e+f)(f+d)}\begin{vmatrix}
+1&\frac{de+ef+fd}{d+e+f}&1\\
+0&d&1\\
+d(d+e+f)&d(de+df+2ef)&(d+e)(d+f)
+\end{vmatrix}\\
+&=\frac{2ef}{(d+e)(e+f)(f+d)(d+e+f)}\begin{vmatrix}
+d+e+f&de+ef+fd&d+e+f\\
+0&d&1\\
+d(d+e+f)&d(de+df+2ef)&(d+e)(d+f)
+\end{vmatrix}\\
+&=\frac{2ef}{(d+e)(e+f)(f+d)(d+e+f)}\begin{vmatrix}
+d+e+f&de+ef+fd&d+e+f\\
+0&d&1\\
+0&def&ef
+\end{vmatrix}\\
+&=0
+\end{align*}
+により示された.
+\end{ifsol*}

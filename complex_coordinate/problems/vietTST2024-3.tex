@@ -1,0 +1,51 @@
+\begin{bprb}[Vietnum TST 2024-3]
+鋭角不等辺三角形$ABC$において, $ABC$の内接円が辺$BC$, $CA$, $AB$と接する点をそれぞれ$D$, $E$, $F$とする.
+$A$, $B$, $C$から対辺$BC$, $CA$, $AB$に下ろした垂線の足をそれぞれ$X$, $Y$, $Z$とする.
+$EF$, $FD$, $DE$に関して$X$, $Y$, $Z$と対称な点をそれぞれ$A^\prime$, $B^\prime$, $C^\prime$とするとき, 三角形$ABC$と三角形$A^\prime B^\prime C^\prime$とは相似であることを示せ.
+\end{bprb}
+\begin{ifsol*}
+$\lvert d\rvert=\lvert e\rvert=\lvert f\rvert=1$となるような座標で考える.
+\[a=\frac{2ef}{e+f},\quad b=\frac{2fd}{f+d},\quad c=\frac{2de}{d+e}\]
+である.
+外心を中心とする座標では$x=\frac 12(a+b+c-bc/a)$と表されるので, 命題\ref{prop:translation-io}により
+\[x=\frac{1}{(d+e)(e+f)(f+d)}(d^2e^2+e^2f^2+f^2d^2-d^4-2def(d+e+f))\]
+である.
+系\ref{cor:reflection2}により
+\begin{align*}
+a^\prime
+&=e+f-ef\bar x\\
+&=e+f-\frac{ef}{d^2(d+e)(e+f)(f+d)}(d^2e^2+d^2f^2+d^4-e^2f^2-2d^2(de+ef+fd))\\
+&=\frac{1}{d^2(d+e)(e+f)(f+d)}\\
+&\phantom{{}={}}\times\biggl((e+f)^2d^2(d^2+(e+f)d+ef)-ef\bigl(d^4-2(e+f)d^3+(e-f)^2d^2-e^2f^2\bigr)\biggr)\\
+&=\frac{1}{d^2(d+e)(e+f)(f+d)}\bigl((e^2+ef+f^2)d^4+(e^3+e^2f+ef^2+f^3)d^3+e^3f^3\bigr)
+\end{align*}
+である.
+対称性により,
+\begin{align*}
+b^\prime=\frac{1}{e^2(d+e)(e+f)(f+d)}\bigl((f^2+fd+d^2)e^4+(f^3+f^2d+fd^2+d^3)e^3+f^3d^3\bigr)
+\end{align*}
+および
+\begin{align*}
+c^\prime=\frac{1}{f^2(d+e)(e+f)(f+d)}\bigl((d^2+de+e^2)f^4+(d^3+d^2e+de^2+e^3)f^3+d^3e^3\bigr)
+\end{align*}
+も成り立つ.
+
+以上により,
+\begin{align*}
+a^\prime-b^\prime
+&=\frac{1}{d^2e^2(d+e)(e+f)(f+d)}\\
+&\phantom{{}={}}\times\biggl(e^2\bigl((e^2+ef+f^2)d^4+(e^3+e^2f+ef^2+f^3)d^3+e^3f^3\bigr)\\
+&\phantom{{}=\times\biggl(}-d^2\bigl((d^2+df+f^2)e^4+(d^3+d^2f+df^2+f^3)e^3+d^3f^3\bigr)\biggr)\\
+&=\frac{d-e}{d^2e^2(d+e)(e+f)(f+d)}\Bigl(d^3e^3f+d^2e^2(d+e)f^2-d^3e^3(d+e)-d^3e^3f+d^2e^2f^3\\
+&\phantom{=\frac{d-e}{d^2e^2(d+e)(e+f)(f+d)}\Bigl(}-(d^4+d^3e+d^2e^2+de^3+e^4)f^3\Bigr)\\
+&=\frac{(d^2-e^2)(d^2e^2f^2-d^3e^3-e^3f^3-f^3d^3)}{d^2e^2(d+e)(e+f)(f+d)}
+\end{align*}
+および
+\[
+a-b=\frac{2ef}{e+f}-\frac{2df}{d+f}=\frac{2(e^2-d^2)f^2}{(d+e)(e+f)(f+d)}
+\]
+が成り立つ.
+これにより,
+\[\frac{a^\prime-b^\prime}{a-b}=\frac{d^3e^3+e^3f^3+f^3d^3-d^2e^2f^2}{2d^2e^2f^2}\]
+であり, これは$d$, $e$, $f$について対称なので三角形$ABC$と三角形$A^\prime B^\prime C^\prime$とは相似である.
+\end{ifsol*}

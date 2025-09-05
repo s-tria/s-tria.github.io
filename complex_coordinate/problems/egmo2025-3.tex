@@ -1,0 +1,157 @@
+\begin{bprb}[EGMO2025-3]\plabel{prb:egmo2025-3}
+鋭角三角形$ABC$の辺$BC$上に点$D$, $E$を, $4$点$B$, $D$, $E$, $C$がこの順に並び, さらに$BD=DE=EC$をみたすようにとる.
+線分$AD$, $AE$の中点をそれぞれ$M$, $N$とする.
+三角形$ADE$が鋭角三角形であると仮定し, その垂心を$H$とする.
+直線$BM$, $CN$上にそれぞれ点$P$, $Q$をとると, $D$, $H$, $M$, $P$は同一円周上にある相異なる$4$点であり, $E$, $H$, $N$, $Q$もまた同一円周上にある相異なる$4$点であった.
+このとき, $4$点$P$, $Q$, $N$, $M$は同一円周上にあることを示せ.
+\end{bprb}
+\begin{ifsol*}
+$\lvert a\rvert=\lvert d\rvert=\lvert e\rvert=1$となるような座標で考える.
+直線$PM$と直線$QN$との交点を$X$とする.
+$X$が三角形$DHM$の外接円と三角形$EHN$の外接円との根軸上にあれば, 方冪の定理により$4$点$P$, $Q$, $N$, $M$は共円である.
+したがって, 直線$BM$, 直線$CN$, 三角形$DHM$の外接円と三角形$EHN$の外接円との根軸の共点を示すことに帰着された.
+
+$b=2d-e$, $m=\frac{a+d}2$なので, 直線$BM$の方程式は
+\[\biggl(\frac{2e-d}{de}-\frac{a+d}{2ad}\biggr)z-\biggl(2d-e-\frac{a+d}2\biggr)\bar z=\frac{2e-d}{de}\frac{a+d}2-(2d-e)\frac{a+d}{2ad}\]
+すなわち
+\[\frac{3ae-2ad-de}{2ade}-\frac{3d-2e-a}2\bar z=\frac{a+d}{2ade}(e^2+2ae-2de-ad)\]
+であり, 直線$CN$の方程式は
+\[\frac{3ad-2ae-de}{2ade}-\frac{3e-2d-a}2\bar z=\frac{a+e}{2ade}(d^2+2ad-2de-ae)\]
+である.
+$h=a+d+e$なので, 三角形$DHM$の外接円の方程式は
+\[\begin{vmatrix}
+z\bar z&z&\bar z&1\\
+\frac{(a+d+e)(ad+de+ea)}{ade}&a+d+e&\frac{ad+de+ea}{ade}&1\\
+\frac{(a+d)^2}{4ad}&\frac{a+d}2&\frac{a+d}{2ad}&1\\
+1&d&\frac 1d&1
+\end{vmatrix}=0\]
+である.
+ここで,
+\begin{align*}
+&\phantom{={}}\begin{vmatrix}
+z\bar z&z&\bar z&1\\
+\frac{(a+d+e)(ad+de+ea)}{ade}&a+d+e&\frac{ad+de+ea}{ade}&1\\
+\frac{(a+d)^2}{4ad}&\frac{a+d}2&\frac{a+d}{2ad}&1\\
+1&d&\frac 1d&1
+\end{vmatrix}\\
+&=\frac{1}{4a^2d^3e}\begin{gmatrix}[v]
+z\bar z&z&\bar z&1\\
+(a+d+e)(ad+de+ea)&ade(a+d+e)&ad+de+ea&ade\\
+(a+d)^2&2ad(a+d)&2(a+d)&4ad\\
+d&d^2&1&d
+\rowops
+\add[-ae]{3}{1}
+\end{gmatrix}\\
+&=\frac{a+e}{4a^2d^3e}\begin{gmatrix}[v]
+z\bar z&z&\bar z&1\\
+(a+d)(d+e)&ade&d&0\\
+(a+d)^2&2ad(a+d)&2(a+d)&4ad\\
+d&d^2&1&d
+\rowops
+\add[-(a+d)]{3}{2}
+\end{gmatrix}\\
+&=\frac{(a+e)(a-d)}{4a^2d^3e}\begin{vmatrix}
+z\bar z&z&\bar z&1\\
+(a+d)(d+e)&ade&d&0\\
+a+d&2d(a+d)&0&2d\\
+d&d^2&1&d
+\end{vmatrix}
+\end{align*}
+であり,
+\[\begin{vmatrix}
+ade&d&0\\
+2d(a+d)&0&2d\\
+d^2&1&d
+\end{vmatrix}=-2ad^2(d+e),\]
+\[\begin{vmatrix}
+(a+d)(d+e)&d&0\\
+a+d&0&2d\\
+d&1&d
+\end{vmatrix}=-d(d^2+3ad+2de+2ae),\]
+\[\begin{vmatrix}
+(a+d)(d+e)&ade&0\\
+a+d&2d(a+d)&2d\\
+d&d^2&d
+\end{vmatrix}=ad^2(2d^2+2ad+3de+ae),\]
+\[\begin{vmatrix}
+(a+d)(d+e)&ade&d\\
+a+d&2d(a+d)&0\\
+d&d^2&1
+\end{vmatrix}=d(a+d)(d^2+ae+2ad+2de)\]
+により, 三角形$DHM$の外接円の方程式は
+\begin{align*}
+-2ade(d+e)z\bar z+e(d^2+3ad+2de+2ae)z+ade(2d^2+2ad+3de+ae)\bar z\\
+=e(a+d)(d^2+ae+2ad+2de)
+\end{align*}
+である.
+同様に, 三角形$EHN$の外接円の方程式は
+\begin{align*}
+-2ade(d+e)z\bar z+d(e^2+3ae+2de+2ad)z+ade(2e^2+2ae+3de+ad)\bar z\\
+=d(a+e)(e^2+ad+2ae+2de)
+\end{align*}
+である.
+これら$2$式の差をとると, 三角形$DHM$の外接円と三角形$EHN$の外接円との根軸の方程式は
+\[(2ad+2ae+de)z-ade(a+2d+2e)\bar z=(d+e)(a^2-de)\]
+となる.
+
+以上により, 示すべき式は
+\[\begin{vmatrix}
+2ad+2ae+de&-ade(a+2d+2e)&(d+e)(a^2-de)\\
+3ae-2ad-de&-ade(3d-2e-a)&(a+d)(e^2+2ae-2de-ad)\\
+3ad-2ae-de&-ade(3e-2d-a)&(a+e)(d^2+2ad-2de-ae)
+\end{vmatrix}=0\]
+すなわち
+\[\begin{vmatrix}
+2ad+2ae+de&a+2d+2e&(d+e)(a^2-de)\\
+3ae-2ad-de&3d-2e-a&(a+d)(e^2+2ae-2de-ad)\\
+3ad-2ae-de&3e-2d-a&(a+e)(d^2+2ad-2de-ae)
+\end{vmatrix}=0\]
+である.
+
+\begin{align*}
+&\phantom{={}}\begin{gmatrix}[v]
+2ad+2ae+de&a+2d+2e&(d+e)(a^2-de)\\
+3ae-2ad-de&3d-2e-a&(a+d)(e^2+2ae-2de-ad)\\
+3ad-2ae-de&3e-2d-a&(a+e)(d^2+2ad-2de-ae)
+\rowops
+\add{0}{1}
+\add{0}{2}
+\end{gmatrix}\\
+&=\begin{vmatrix}
+2ad+2ae+de&a+2d+2e&(d+e)(a^2-de)\\
+5ae&5d&-(a+3e)d^2+ae(3a+e)\\
+5ad&5e&-(a+3d)e^2+ad(3a+d)
+\end{vmatrix}\\
+&=5\begin{gmatrix}[v]
+2ad+2ae+de&a+2d+2e&5(d+e)(a^2-de)\\
+ae&d&-(a+3e)d^2+ae(3a+e)\\
+ad&e&-(a+3d)e^2+ad(3a+d)
+\rowops
+\add[-2]{1}{0}
+\add[-2]{2}{0}
+\end{gmatrix}\\
+&=5\begin{gmatrix}[v]
+de&a&-a^2(d+e)+de(d+e)\\
+ae&d&-(a+3e)d^2+ae(3a+e)\\
+ad&e&-(a+3d)e^2+ad(3a+d)
+\colops
+\add[ad+de+ea]{1}{2}
+\add[-(a+d+e)]{0}{2}
+\end{gmatrix}\\
+&=5\begin{gmatrix}[v]
+de&a&0\\
+ae&d&-2d^2e+2a^2e\\
+ad&e&-2de^2+2a^2d
+\colops
+\add[2de]{1}{2}
+\add[-2a]{0}{2}
+\end{gmatrix}\\
+&=5\begin{vmatrix}
+de&a&0\\
+ae&d&0\\
+ad&e&0
+\end{vmatrix}\\
+&=0
+\end{align*}
+により, $3$直線の共点が示された.
+\end{ifsol*}

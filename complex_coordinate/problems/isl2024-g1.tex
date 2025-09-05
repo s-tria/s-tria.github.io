@@ -1,0 +1,20 @@
+\begin{bprb}[ISL2024-G1]
+円に内接する四角形$ABCD$が$AC<BD<AD$および$\angle DBA<90^\circ$をみたしている.
+$D$を通り$AB$に平行な直線上に点$E$をとったところ, $E$と$C$は直線$AD$に関して反対側にあり, $AC=DE$が成り立った.
+$A$を通り$CD$に平行な直線上に点$F$をとったところ, $F$と$B$は直線$AD$に関して反対側にあり, $BD=AF$が成り立った.
+$BC$の垂直二等分線と$EF$の垂直二等分線とは, 四角形$ABCD$の外接円上で交わることを示せ.
+\end{bprb}
+\begin{ifsol*}
+$\lvert a\rvert=\lvert b\rvert=\lvert c\rvert=\lvert d\rvert=1$となるような座標で考える.
+四角形$ABCD$の外接円を$\Omega$とおく.
+$\sqrt{bc}$が点$A$を含まない弧$BC$上にあるように$\sqrt{bc}$の符号を定める.
+
+$e-d$は$a-c$を$-\frac 12\angle BAC$だけ回転したものであるため, $e-d=(a-c)\sqrt{\frac bc}$が成り立つ.
+同様に, $f-a$は$d-b$を$\frac 12\angle BDC$だけ回転したものであるため, $f-a=(d-b)\sqrt{\frac cb}$が成り立つ.
+
+$-\sqrt{bc}$は$BC$の垂直二等分線上にあるので$-\sqrt{bc}$が$EF$の垂直二等分線上にあることを示せば十分である.
+\[e+\sqrt{bc}=(a-c)\sqrt\frac bc+d+\sqrt{bc}=a\sqrt\frac bc+d\]
+および
+\[f+\sqrt{bc}=(d-b)\sqrt\frac cb+a+\sqrt{bc}=d\sqrt\frac cb+a\]
+が成り立つので$\lvert e+\sqrt{bc}\rvert=\lvert f+\sqrt{bc}\rvert$であり, $-\sqrt{bc}$が$EF$の垂直二等分線上にあることが示された.
+\end{ifsol*}

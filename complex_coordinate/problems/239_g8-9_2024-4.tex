@@ -1,0 +1,37 @@
+\begin{bprb}[239 Open MO 2024 Grade8-9 p4]
+三角形$ABC$があり, その内心を$I$とする.
+$X$, $Y$はそれぞれ線分$BI$, $CI$の$I$側の延長線上の点で, $\angle IAX=\angle IBA$および$\angle IAY=\angle ICA$が成り立つ.
+線分$IA$の中点, 線分$XY$の中点, 三角形$ABC$の外心の$3$点は同一直線上にあることを示せ.
+\end{bprb}
+\begin{ifsol*}
+$\lvert a\rvert=\lvert b\rvert=\lvert c\rvert=1$となるような座標で考える.
+$A$を含まない弧$BC$の中点, $B$を含まない弧$CA$の中点, $C$を含まない弧$AB$の中点をそれぞれ$M_A$, $M_B$, $M_C$とおき,
+$m_a=-\sqrt{bc}$, $m_b=-\sqrt{ca}$, $m_c=-\sqrt{ab}$となるように$\sqrt a$, $\sqrt b$, $\sqrt c$の符号を定める.
+線分$IA$の中点, 線分$XY$の中点, 三角形$ABC$の外心をそれぞれ$M_1$, $M_2$, $O$とおく.
+
+$i=-\sqrt{ab}-\sqrt{bc}-\sqrt{ca}$により,
+\[m_1=\frac{a-\sqrt{ab}-\sqrt{ac}-\sqrt{bc}}2\]
+である.
+\[\measuredangle M_BBA=\measuredangle IBA=\measuredangle IAX=\measuredangle M_AAX\]
+により, $X$は$l(a,\sqrt{ab})$上にある.
+これにより, $x$は$l(a,\sqrt{ab})$と$l(b,-\sqrt{ca})$との交点なので
+\begin{align*}
+x
+&=\frac{a\sqrt{ab}(b-\sqrt{ca})+b\sqrt{ca}(a+\sqrt{ab})}{a\sqrt{ab}+b\sqrt{ca}}\\
+&=\frac{ab+b\sqrt{ac}-a\sqrt{ac}+a\sqrt{bc}}{a+\sqrt{bc}}
+\end{align*}
+となる.
+同様に,
+\[y=\frac{ac+c\sqrt{ab}-a\sqrt{ac}+a\sqrt{bc}}{a+\sqrt{bc}}\]
+となり,
+\begin{align*}
+m_2
+&=\frac{x+y}2\\
+&=\frac{a(b+c)+\sqrt{abc}(\sqrt b+\sqrt c)-a\sqrt a(\sqrt b+\sqrt c)+2a\sqrt{bc}}{2(a+\sqrt{bc})}\\
+&=\frac{\sqrt a(\sqrt b+\sqrt c)\bigl(\sqrt a(\sqrt b+\sqrt c)+\sqrt bc-a\bigr)}{2(a+\sqrt{bc})}\\
+&=-\frac{\sqrt a(\sqrt b+\sqrt c)}{(a+\sqrt{bc})}m_1\\
+&\sim m_1
+\end{align*}
+が得られる.
+したがって, $M_1$, $M_2$, $O$は共線である.
+\end{ifsol*}

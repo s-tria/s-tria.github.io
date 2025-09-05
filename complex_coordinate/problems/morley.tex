@@ -1,0 +1,35 @@
+\begin{bprb}[Morleyの定理]
+三角形$ABC$において, 角$A$の内角の三等分線を$l_{ab}$, $l_{ac}$とおく.
+ただし, 辺$AB$, $l_{ab}$, $l_{ac}$, 辺$AC$はこの順に並ぶとする.
+$l_{ba}$, $l_{bc}$, $l_{ca}$, $l_{cb}$も同様に定める.
+$l_{bc}$と$l_{cb}$との交点を$P$, $l_{ca}$と$l_{ac}$との交点を$Q$, $l_{ab}$と$l_{ba}$との交点を$R$としたとき, 三角形$PQR$は正三角形であることを示せ.
+\end{bprb}
+\begin{ifsol*}
+$a=\alpha^3$, $b=\beta^3$, $c=\gamma^3$とおく.
+ただし, $0\leq\arg\alpha\leq\arg\beta\leq\arg\gamma<\frac{\pi}{3}$とする.
+$l_{ab}=l(\alpha^3,\beta^2\gamma)$, $l_{ac}=l(\alpha^3,\beta\gamma^2)$, $l_{bc}=l(\beta^3,\omega\gamma^2\alpha)$, $l_{ba}=l(\beta^3,\omega^2\gamma\beta^2)$, $l_{ca}=(\gamma^3,\alpha^2\beta)$, $l_{cb}=l(\gamma^3,\alpha\beta^2)$であることを用いる.
+ただし, $\omega=e^{\frac{2\sqrt{-1}\pi}{3}}$である.
+これにより, $P$の座標は
+\begin{align*}
+p
+&=\frac{\beta^3\omega\gamma^2\alpha(\gamma^3+\alpha\beta^2)-\gamma^3\alpha\beta^2(\beta^3+\omega\gamma^2\alpha)}{\beta^3\omega\gamma^2\alpha-\gamma^3\alpha\beta^2}\\
+&=\frac{\omega\beta(\gamma^3+\alpha\beta^2)-\gamma(\beta^3+\omega\gamma^2\alpha)}{\omega\beta-\gamma}\\
+&=-\omega\beta\gamma^2-\omega^2\beta^2\gamma+\alpha\beta^2+\omega^2\alpha\beta\gamma+\omega\alpha\gamma^2,
+\end{align*}
+$Q$の座標は
+\begin{align*}
+q
+&=\frac{\gamma^3\alpha^2\beta(\alpha^3+\beta\gamma^2)-\alpha^3\beta\gamma^2(\gamma^3+\alpha^2\beta)}{\gamma^3\alpha^2\beta-\alpha^3\beta\gamma^2}\\
+&=\frac{\gamma(\alpha^3+\beta\gamma^2)-\alpha(\gamma^3+\alpha^2\beta)}{\gamma-\alpha}\\
+&=-\gamma\alpha^2-\gamma^2\alpha+\beta\gamma^2+\beta\gamma\alpha+\beta\alpha^2,
+\end{align*}
+$R$の座標は
+\begin{align*}
+r
+&=\frac{\alpha^3\beta^2\gamma(\beta^3+\omega^2\gamma\alpha^2)-\beta^3\omega^2\gamma\alpha^2(\alpha^3+\beta^2\gamma)}{\alpha^3\beta^2\gamma-\beta^3\omega^2\gamma\alpha^2}\\
+&=\frac{\alpha(\beta^3+\omega^2\gamma\alpha^2)-\omega^2\beta(\alpha^3+\beta^2\gamma)}{\alpha-\omega^2\beta}\\
+&=-\omega^2\alpha\beta^2-\omega\alpha^2\beta+\omega^2\gamma\alpha^2+\omega\gamma\alpha\beta+\gamma\beta^2
+\end{align*}
+と計算できる.
+$p+\omega q+\omega^2r=0$であるため, 三角形$PQR$は正三角形である.
+\end{ifsol*}

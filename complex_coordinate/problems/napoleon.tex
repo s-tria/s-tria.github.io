@@ -1,0 +1,24 @@
+\begin{bprb}[Napoleonの定理]
+三角形$ABC$において, $BPC$, $CQA$, $ARB$が正三角形となるように$3$点$P$, $Q$, $R$をとる.
+ただし, $(B,P,C)$, $(C,Q,A)$, $(A,R,B)$はいずれもこの順に反時計回りに並ぶとする.
+三角形$BPC$, $CQA$, $ARB$の重心をそれぞれ$L$, $M$, $N$とするとき, 三角形$LMN$は正三角形であることを示せ.
+\end{bprb}
+\begin{ifsol*}
+$\omega=\frac{-1+\sqrt{-3}}{2}$とおく.
+三角形$BPC$が正三角形なので
+\[p=-\omega c-\omega^2b\]
+が成り立つ.
+同様に
+\[q=-\omega a-\omega^2c,\quad p=-\omega b-\omega^2a\]
+も成り立つ.
+示したい式は
+\[l+\omega m+\omega^2n=0\]
+であり,
+\begin{align*}
+l+\omega m+\omega^2n
+&=\frac 13\bigl(b+c+p+\omega(c+a+q)+\omega^2(a+b+r)\bigr)\\
+&=\frac 13\bigl(b+c-\omega c-\omega^2b+\omega(c+a-\omega a-\omega^2c)+\omega^2(a+b-\omega b-\omega^2a)\bigr)\\
+&=0
+\end{align*}
+により成り立つ.
+\end{ifsol*}

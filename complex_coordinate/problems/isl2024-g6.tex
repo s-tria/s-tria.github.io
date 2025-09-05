@@ -1,0 +1,76 @@
+\begin{bprb}[ISL2024-G6]\plabel{prb:isl2024-g6}
+$AB<AC$なる鋭角三角形$ABC$があり, その外接円を$\Gamma$とする.
+$\Gamma$上に点$X$, $Y$をとると, 直線$XY$と直線$BC$とは$\angle BAC$の外角の二等分線上で交わった.
+$X$, $Y$における$\Gamma$の接線の交点を$T$とすると, $T$は$BC$に関して$A$と同じ側にあり, 直線$TX$, $TY$は直線$BC$とそれぞれ$U$, $V$で交わった.
+三角形$TUV$の角$T$内の傍心を$J$とするとき, $AJ$は$\angle BAC$を二等分することを示せ.
+\end{bprb}
+\begin{ifsol*}
+$\lvert a\rvert=\lvert b\rvert=\lvert c\rvert=1$となるような座標で考える.
+$\sqrt{bc}$が$A$を含む弧$BC$上にあるように$\sqrt{bc}$の符号を定める.
+$\angle UTV$の二等分線と$\angle BAC$の二等分線との交点を$J^\prime$とし, $J^\prime$が三角形$TUV$の角$T$内の傍心であることを示す.
+$J^\prime$が$\angle VUT$の外角の二等分線上にあることを示せばよく, $\angle VUT$の外角の二等分線が$l(x,-\sqrt{bc})$に平行であることから, 示すべき式は
+\[u-j^\prime=\overline{u-j^\prime}\cdot\sqrt{bc}x\]
+である.
+
+$\angle UTV$の二等分線は$l(\sqrt{xy},-\sqrt{xy})$であることから,
+\[j^\prime=\frac{xy(a-\sqrt{bc})}{xy-a\sqrt{bc}}\]
+である.
+また,
+\[u=\frac{x^2(b+c)-2bcx}{x^2-bc}\]
+である.
+以上より,
+\begin{align*}
+u-j^\prime
+&=\frac{x^2(b+c)-2bcx}{x^2-bc}-\frac{xy(a-\sqrt{bc})}{xy-a\sqrt{bc}}\\
+&=\frac{(x^2(b+c)-2bcx)(xy-a\sqrt{bc})-xy(a-\sqrt{bc})(x^2-bc)}{(x^2-bc)(xy-a\sqrt{bc})}\\
+&=\frac{(b+c-a+\sqrt{bc})x^3y-2bcx^2y-a\sqrt{bc}(b+c)x^2+bc(a-\sqrt{bc})xy+2abc\sqrt{bc}x}{(x^2-bc)(xy-a\sqrt{bc})}\\
+\end{align*}
+であり,
+\begin{align*}
+\overline{u-j^\prime}
+&=\frac{(ab+ac-bc)\sqrt{bc}+abc-2a\sqrt{bc}x-(b+c)xy-(a-\sqrt{bc})x^2+2x^2y}{(x^2-bc)(xy-a\sqrt{bc})}
+\end{align*}
+となる.
+したがって,
+\begin{align*}
+&\phantom{{}={}}u-j-\overline{u-j^\prime}\cdot\sqrt{bc}x\\
+&=\frac 1{(x^2-bc)(xy-a\sqrt{bc})}\\
+&\phantom{={}}\times\biggl((b+c-a-\sqrt{bc})x^3y+(a-\sqrt{bc})\sqrt{bc}x^3+(b+c-2\sqrt{bc})\sqrt{bc}x^2y\\
+&\phantom{=\times\biggl(}-(b+c-2\sqrt{bc})a\sqrt{bc}x^2+(a-\sqrt{bc})bcxy+(a\sqrt{bc}+bc-ab-ac)bcx\biggr)\\
+&=\frac x{(x^2-bc)(xy-a\sqrt{bc})}\\
+&\phantom{={}}\times\biggl((b+c-a-\sqrt{bc})x^2y+(a-\sqrt{bc})\sqrt{bc}x^2+(b+c-2\sqrt{bc})\sqrt{bc}xy\\
+&\phantom{=\times\biggl(}-(b+c-2\sqrt{bc})a\sqrt{bc}x+(a-\sqrt{bc})bcy+(a\sqrt{bc}+bc-ab-ac)bc\biggr)
+\end{align*}
+となる.
+以下,
+\begin{align*}
+&\phantom{={}}(b+c-a-\sqrt{bc})x^2y+(a-\sqrt{bc})\sqrt{bc}x^2+(b+c-2\sqrt{bc})\sqrt{bc}xy\\
+&\phantom{={}}-(b+c-2\sqrt{bc})a\sqrt{bc}x+(a-\sqrt{bc})bcy+(a\sqrt{bc}+bc-ab-ac)bc\\
+&=0
+\end{align*}
+を示す.
+
+$l(x,y)$, $l(b,c)$, $l(a,\sqrt{bc})$が共点なので
+\[\begin{vmatrix}
+xy&x+y&1\\
+bc&b+c&1\\
+a\sqrt{bc}&a+\sqrt{bc}&1
+\end{vmatrix}=0\]
+であり, これから
+\[(b+c-a-\sqrt{bc})xy=(bc-a\sqrt{bc})(x+y)+a\sqrt{bc}(b+c)-bc(a+\sqrt{bc})\]
+が得られる.
+これを用いると,
+\begin{align*}
+&\phantom{={}}(b+c-a-\sqrt{bc})x^2y+(a-\sqrt{bc})\sqrt{bc}x^2+(b+c-2\sqrt{bc})\sqrt{bc}xy\\
+&\phantom{={}}-(b+c-2\sqrt{bc})a\sqrt{bc}x+(a-\sqrt{bc})bcy+(a\sqrt{bc}+bc-ab-ac)bc\\
+&=(bc-a\sqrt{bc})(x^2+xy)+\bigl(a\sqrt{bc}(b+c)-bc(a+\sqrt{bc})\bigr)x\\
+&\phantom{={}}+(a-\sqrt{bc})\sqrt{bc}x^2+(b+c-2\sqrt{bc})\sqrt{bc}xy\\
+&\phantom{={}}-(b+c-2\sqrt{bc})a\sqrt{bc}x+(a-\sqrt{bc})bcy+(a\sqrt{bc}+bc-ab-ac)bc\\
+&=(b+c-a-\sqrt{bc})\sqrt{bc}xy+(a-\sqrt{bc})bcx+(a-\sqrt{bc})bcy+(a\sqrt{bc}+bc-ab-ac)bc\\
+&=0
+\end{align*}
+となる.
+したがって,
+\[u-j^\prime=\overline{u-j^\prime}\cdot\sqrt{bc}x\]
+が示された.
+\end{ifsol*}

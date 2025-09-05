@@ -1,0 +1,138 @@
+\begin{bprb}[Balkan MO 2025-2]
+鋭角三角形$ABC$において, 垂心を$H$とし, 辺$BC$上(端点を除く)に点$D$をとる.
+辺$AB$上(端点を除く)に点$E$を, 辺$AC$上(端点を除く)に点$F$をそれぞれとったところ, $4$点$A$, $C$, $D$, $E$および$4$点$A$, $B$, $D$, $F$はそれぞれ同一円周上にあった.
+線分$BF$と線分$CE$との交点を$P$とおく.
+直線$HA$上に点$L$を, 直線$LC$が三角形$PBC$の外接円と点$C$で接するようにとる.
+直線$BH$と直線$CP$との交点を$X$とおく.
+このとき, $3$点$D$, $X$, $L$は同一直線上にあることを示せ.
+\end{bprb}
+\begin{ifsol*}
+$\lvert a\rvert=\lvert b\rvert=\lvert c\rvert=1$となるような座標で考える.
+直線$AD$と三角形$ABC$の外接円との交点のうち$A$でない方を$Q$とする.
+このとき,
+\[d=\frac{aq(b+c)-bc(a+q)}{aq-bc}\]
+である.
+また,
+\[\measuredangle ECB=\measuredangle ECD=\measuredangle EAD=\measuredangle BAQ\]
+により, 直線$CE$は$l(c,\frac{b^2}q)$である.
+$x$は$l(b,-\frac{ac}b)$と$l(c,\frac{b^2}q)$との交点なので
+\begin{align*}
+x
+&=\frac{\frac{b^2c}q\bigl(b-\frac{ac}b\bigr)+ac\bigl(c+\frac{b^2}q\bigr)}{\frac{b^2c}q+ac}\\
+&=\frac{b(b^2-ac)+a(b^2+cq)}{b^2+aq}\\
+&=\frac{b^3-abc+ab^2+acq}{b^2+aq}
+\end{align*}
+である.
+また,
+\begin{align*}
+\measuredangle LCB
+&=\measuredangle CPB=-\measuredangle PBC-\measuredangle BCP\\
+&=-\measuredangle FBD-\measuredangle DCE\\
+&=-\measuredangle FAD-\measuredangle DAE\\
+&=-\measuredangle FAE=-\measuredangle CAB=\measuredangle BAC
+\end{align*}
+により直線$CL$は$l(c,\frac{b^2}c)$なので
+\begin{align*}
+l
+&=\frac{b^2\bigl(a-\frac{bc}a\bigr)+bc\bigl(c+\frac{b^2}c\bigr)}{b^2+bc}\\
+&=\frac{b(a^2-bc)+a(c^2+b^2)}{a(b+c)}\\
+&=\frac{a^2b-b^2c+ac^2+ab^2}{a(b+c)}
+\end{align*}
+である.
+
+以上により, 示すべきことは$3$点$\frac{aq(b+c)-bc(a+q)}{aq-bc}$, $\frac{b^3-abc+ab^2+acq}{b^2+aq}$, $\frac{a^2b-b^2c+ac^2+ab^2}{a(b+c)}$の共線である.
+これらの共軛がそれぞれ$\frac{a+q-b-c}{aq-bc}$, $\frac{acq-b^2q+bcq+b^3}{bc(b^2+aq)}$, $\frac{bc^2-a^2c+ab^2+ac^2}{abc(b+c)}$であることに注意すると
+示すべき式は
+\[\begin{vmatrix}
+aq(b+c)-bc(a+q)&a+q-b-c&aq-bc\\
+bc(b^3-abc+ab^2+acq)&acq-b^2q+bcq+b^3&bc(b^2+aq)\\
+bc(a^2b-b^2c+ac^2+ab^2)&bc^2-a^2c+ab^2+ac^2&abc(b+c)
+\end{vmatrix}=0\]
+である.
+\begin{align*}
+&\phantom{={}}\begin{vmatrix}
+aq(b+c)-bc(a+q)&a+q-b-c&aq-bc\\
+bc(b^3-abc+ab^2+acq)&acq-b^2q+bcq+b^3&bc(b^2+aq)\\
+bc(a^2b-b^2c+ac^2+ab^2)&bc^2-a^2c+ab^2+ac^2&abc(b+c)
+\end{vmatrix}\\
+&=bc\begin{vmatrix}
+aq(b+c)-bc(a+q)&bc(a+q-b-c)&aq-bc\\
+b^3-abc+ab^2+acq&acq-b^2q+bcq+b^3&b^2+aq\\
+a^2b-b^2c+ac^2+ab^2&bc^2-a^2c+ab^2+ac^2&ab+ac
+\end{vmatrix}
+\end{align*}
+であり, 第$1$列に第$2$列の$1$倍と第$3$列の$-(b+c)$倍とを足すと
+\begin{align*}
+&\phantom{={}}\begin{gmatrix}[v]
+aq(b+c)-bc(a+q)&bc(a+q-b-c)&aq-bc\\
+b^3-abc+ab^2+acq&acq-b^2q+bcq+b^3&b^2+aq\\
+a^2b-b^2c+ac^2+ab^2&bc^2-a^2c+ab^2+ac^2&ab+ac
+\colops
+\add{1}{0}
+\add[-(b+c)]{2}{0}
+\end{gmatrix}\\
+&=\begin{vmatrix}
+0&bc(a+q-b-c)&aq-bc\\
+(a+b)(b-c)(b-q)&acq-b^2q+bcq+b^3&b^2+aq\\
+(a+b)(b-c)(a-c)&bc^2-a^2c+ab^2+ac^2&ab+ac
+\end{vmatrix}\\
+&=(a+b)(b-c)\begin{gmatrix}[v]
+0&bc(a+q-b-c)&aq-bc\\
+b-q&acq-b^2q+bcq+b^3&b^2+aq\\
+a-c&bc^2-a^2c+ab^2+ac^2&ab+ac
+\rowops
+\add[-1]{0}{1}
+\end{gmatrix}\\
+&=(a+b)(b-c)\begin{gmatrix}[v]
+0&bc(a+q-b-c)&aq-bc\\
+b-q&acq-b^2q+b^3+b^2c+bc^2-abc&b^2+bc\\
+a-c&bc^2-a^2c+ab^2+ac^2&ab+ac
+\colops
+\add[b^2-ac]{0}{1}
+\end{gmatrix}\\
+&=(a+b)(b-c)\begin{vmatrix}
+0&bc(a+q-b-c)&aq-bc\\
+b-q&b^2c+bc^2&b^2+bc\\
+a-c&b^2c+bc^2&ab+ac
+\end{vmatrix}\\
+&=bc(b+c)(a+b)(b-c)\begin{vmatrix}
+0&a+q-b-c&aq-bc\\
+b-q&1&b\\
+a-c&1&a
+\end{vmatrix}
+\end{align*}
+と計算できる.
+\begin{align*}
+\begin{vmatrix}
+0&a+q-b-c&aq-bc\\
+b-q&1&b\\
+a-c&1&a
+\end{vmatrix}
+&=-(a+q-b-c)\begin{vmatrix}b-q&b\\a-c&a\end{vmatrix}+(aq-bc)\begin{vmatrix}b-q&1\\a-c&1\end{vmatrix}\\
+&=0
+\end{align*}
+なので,
+\[\begin{vmatrix}
+aq(b+c)-bc(a+q)&a+q-b-c&aq-bc\\
+bc(b^3-abc+ab^2+acq)&acq-b^2q+bcq+b^3&bc(b^2+aq)\\
+bc(a^2b-b^2c+ac^2+ab^2)&bc^2-a^2c+ab^2+ac^2&abc(b+c)
+\end{vmatrix}=0\]
+であり, $D$, $X$, $L$の共線が示された.
+\end{ifsol*}
+\begin{ifsoll*}
+\[\begin{vmatrix}
+aq(b+c)-bc(a+q)&a+q-b-c&aq-bc\\
+bc(b^3-abc+ab^2+acq)&acq-b^2q+bcq+b^3&bc(b^2+aq)\\
+bc(a^2b-b^2c+ac^2+ab^2)&bc^2-a^2c+ab^2+ac^2&abc(b+c)
+\end{vmatrix}=0\]
+を示すことに帰着されるところまでは同じである.
+左辺は$q$の高々$2$次式なので$3$つの$q$の値について成立が確かめられれば任意の$q$について成立することがわかる.
+$q=b,c,-\frac{bc}a$について成立することを示す.
+$ABC$は鋭角三角形なので$b$, $c$, $-\frac{bc}a$はどの$2$つも相異なる.
+
+$q=b$のとき, $X=L=B$なので$D$, $X$, $L$は共線であり, 行列式は$0$となる.
+$q=c$のとき, $D=C$で, $X$と$L$はいずれも$l(c,\frac{b^2}c)$上にあるので$D$, $X$, $L$は共線であり, 行列式は$0$となる.
+$q=-\frac{bc}a$のとき, $X$は$l(b,-\frac{ac}b)$と$l(c,-\frac{ab}c)$との交点なので$X=H$であることに注意すると, $D$, $X$, $L$はいずれも$l(a,-\frac{bc}a)$上にあるため, この場合も行列式は$0$である.
+
+以上により, 任意の$q$について上の行列式が$0$となることが示された.
+\end{ifsoll*}

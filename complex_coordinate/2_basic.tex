@@ -1,0 +1,491 @@
+\begin{bthm}\label{thm:fund1}
+$4$点$A(a)$, $B(b)$, $C(c)$, $D(d)$があり, $A\neq B$, $C\neq D$であるとする.
+\begin{itemize}
+\item 直線$AB$と直線$CD$とが平行であることは$a-b\sim c-d$と同値である.
+\item 直線$AB$と直線$CD$とが垂直であることは$\sqrt{-1}(a-b)\sim c-d$と同値である.
+\item 直線$AB$を反時計回りに$\theta$回転させたときに直線$CD$と重なることは$e^{\sqrt{-1}\theta}(a-b)\sim c-d$と同値である.
+\end{itemize}
+\end{bthm}
+%
+%
+\begin{bthm}
+単位円$\Omega$上に$4$点$A(a)$, $B(b)$, $C(c)$, $D(d)$があり, $A\neq B$, $C\neq D$であるとする.
+\begin{itemize}
+\item 線分$AB$が$\Omega$の直径であることは$a+b=0$と同値である.
+\item 直線$AB$と直線$CD$とが平行であることは$ab=cd$と同値である.
+\item 直線$AB$と直線$CD$とが垂直であることは$ab+cd=0$と同値である.
+\item 直線$AB$を反時計回りに$\theta$回転させたときに直線$CD$と重なることは$cd=e^{2\sqrt{-1}\theta}ab$と同値である.
+\end{itemize}
+\end{bthm}
+%
+%
+\begin{bthm}
+$6$点$A(a)$, $B(b)$, $C(c)$, $A^\prime(a^\prime)$, $B^\prime(b^\prime)$, $C^\prime(c^\prime)$がある.
+三角形$ABC$と$A^\prime B^\prime C^\prime$とが正の向きに相似であることは
+\[\frac{c-a}{b-a}=\frac{c^\prime-a^\prime}{b^\prime-a^\prime}\]
+と同値である.
+また, この式は
+\[\begin{vmatrix}a&a^\prime&1\\b&b^\prime&1\\c&c^\prime&1\end{vmatrix}=0\]
+と書くことができる.
+
+三角形$ABC$と$A^\prime B^\prime C^\prime$とが負の向きに相似であることは
+\[\frac{c-a}{b-a}=\overline{\biggl(\frac{c^\prime-a^\prime}{b^\prime-a^\prime}\biggr)}\]
+と同値である.
+また, この式は
+\[\begin{vmatrix}a&\overline{a^\prime}&1\\b&\overline{b^\prime}&1\\c&\overline{c^\prime}&1\end{vmatrix}=0\]
+と書くことができる.
+\end{bthm}
+\begin{prf*}
+三角形$ABC$と$A^\prime B^\prime C^\prime$とが正の向きに相似であることは$\frac{\lvert AC\rvert}{\lvert AB\rvert}=\frac{\lvert A^\prime C^\prime\rvert}{\lvert A^\prime B^\prime\rvert}$かつ$\measuredangle BAC=\measuredangle B^\prime A^\prime C^\prime$であることと同値であり,
+これは
+\[\frac{c-a}{b-a}=\frac{c^\prime-a^\prime}{b^\prime-a^\prime}\]
+と同値である.
+
+負の向きの相似の場合も同様にわかる.
+\end{prf*}
+%
+%
+\begin{bthm}\label{thm:colinearity1}
+$3$点$A(a)$, $B(b)$, $C(c)$が共線であることは
+\[
+a\bar{b}+b\bar{c}+c\bar{a}=\bar{a}b+\bar{b}c+\bar{c}a
+\]
+と同値である.
+また, これは
+\[
+\begin{vmatrix}a&\bar{a}&1\\b&\bar{b}&1\\c&\bar{c}&1\end{vmatrix}=0
+\]
+と書くことができる.
+\end{bthm}
+\begin{prf*}
+$3$点$A$, $B$, $C$の中に等しいものがあるとき, 主張は自明である.
+
+$3$点$A$, $B$, $C$が相異なるときを考える.
+$3$点$A$, $B$, $C$が共線であることは直線$AB$と直線$AC$とが平行であることと同値であり, 定理\ref{thm:fund1}より, $\frac{a-b}{a-c}\in\mathbb{R}$と同値である.
+\[
+\begin{aligned}
+\frac{a-b}{a-c}\in\mathbb{R}&\iff\frac{a-b}{a-c}=\overline{\left(\frac{a-b}{a-c}\right)}\\
+&\iff\frac{a-b}{a-c}=\frac{\bar{a}-\bar{b}}{\bar{a}-\bar{c}}\\
+&\iff a\bar{b}+b\bar{c}+c\bar{a}=\bar{a}b+\bar{b}c+\bar{c}a\\
+&\iff\begin{vmatrix}a&\bar{a}&1\\b&\bar{b}&1\\c&\bar{c}&1\end{vmatrix}=0
+\end{aligned}
+\]
+により, 主張が従う.
+\end{prf*}
+%
+%
+\begin{bthm}
+$\alpha$を$0$でない複素数, $c$を実数とする.
+このとき,
+\[\bar\alpha z-\alpha\bar z=\sqrt{-1}c\]
+をみたす点$z$の全体は直線である.
+逆に, 複素平面内の直線は, $\alpha$および$c$を適切に定めることで上の形の式で表せる.
+\end{bthm}
+\begin{prf*}
+$z=x+\sqrt{-1}y$, $\alpha=a+\sqrt{-1}b$とおくと,
+\[\bar\alpha z-\alpha\bar z=\sqrt{-1}c\]
+は
+\[2ay-2bx=c\]
+と書き直せるので, これは直線を表す.
+
+また, $2$点$A(a)$, $B(b)$を通る直線の方程式は
+\[(\bar a-\bar b)z-(a-b)\bar z=\bar ab-\bar ba\]
+であり, これは上の式で$\alpha=a-b$, $c=-\sqrt{-1}(\bar ab-\bar ba)$としたものである.
+\end{prf*}
+%
+%
+\begin{bthm}\label{thm:intersection0}
+$2$点$A(a)$, $P(p)$があり, $A\neq P$であるとする.
+$A$が単位円上にあるとし, 直線$AP$と単位円との交点のうち$A$でない方を$Q(q)$とする.
+このとき,
+\[q=\frac{a-p}{a\bar{p}-1}\]
+である.
+\end{bthm}
+\begin{prf*}
+$A$, $P$, $Q$が共線なので
+\[\begin{vmatrix}a&\frac 1a&1\\p&\bar p&1\\q&\frac 1q&1\end{vmatrix}=0\]
+である.
+\begin{align*}
+\begin{vmatrix}a&\frac 1a&1\\p&\bar p&1\\q&\frac 1q&1\end{vmatrix}
+&=\frac 1{aq}\begin{vmatrix}a^2&1&a\\p&\bar p&1\\q^2&1&q\end{vmatrix}\\
+&=\frac{a-q}{aq}\begin{vmatrix}a+q&0&1\\p&\bar p&1\\q^2&1&q\end{vmatrix}\\
+&=\frac{a-q}{aq}\begin{vmatrix}a&0&1\\p-q&\bar p&1\\0&1&q\end{vmatrix}\\
+&=\frac{a-q}{aq}\bigl(a(\bar pq-1)+p-q\bigr)
+\end{align*}
+により,
+\[q=\frac{a-p}{a\bar{p}-1}\]
+が得られる.
+\end{prf*}
+%
+%
+\begin{bthm}
+単位円上に$2$点$A(a)$, $B(b)$があり, $A\neq B$であるとする.
+$Z(z)$が直線$AB$上にあることは
+\[z+ab\bar z=a+b\]
+と同値である.
+\end{bthm}
+\begin{prf*}
+$\bar a=\frac 1a$および$\bar b=\frac 1b$に注意すると, $3$点$A$, $B$, $Z$が共線であることは
+\[\begin{vmatrix}a&\frac 1a&1\\b&\frac 1b&1\\z&\bar z&1\end{vmatrix}=0\]
+と同値である.
+\begin{align*}
+\begin{vmatrix}a&\frac 1a&1\\b&\frac 1b&1\\z&\bar z&1\end{vmatrix}
+&=\begin{vmatrix}a-b&\frac 1a-\frac 1b&0\\b&\frac 1b&1\\z&\bar z&1\end{vmatrix}\\
+&=\frac{a-b}{ab}\begin{vmatrix}ab&-1&0\\b&\frac 1b&1\\z&\bar z&1\end{vmatrix}\\
+&=\frac{a-b}{ab}\begin{vmatrix}ab&-1&0\\a+b&0&1\\z&\bar z&1\end{vmatrix}\\
+&=\frac{a-b}{ab}(a+b-ab\bar z-z)
+\end{align*}
+により, $3$点$A$, $B$, $Z$が共線であることは
+\[z+ab\bar z=a+b\]
+と同値である.
+\end{prf*}
+%
+%
+\begin{bthm}
+単位円$\Omega$上に点$A(a)$がある.
+$Z(z)$が$A$における$\Omega$の接線上にあることは
+\[z+a^2\bar z=2a\]
+と同値である.
+\end{bthm}
+\begin{prf*}
+$Z$が$A$における$\Omega$の接線上にあることは, $z=a$または$\arg(z-a)\equiv\arg a+\frac\pi 2\pmod\pi$であることと同値で, これは
+\[z-a=\overline{z-a}\cdot(-a^2)\]
+と同値である.
+したがって,
+\[z+a^2\bar z=2a\]
+が得られる.
+\end{prf*}
+%
+%
+\begin{bthm}\label{thm:intersection1}
+$4$点$A(a)$, $B(b)$, $C(c)$, $D(d)$があり, $A\neq B$, $C\neq D$であるとする.
+直線$AB$と直線$CD$とが平行でないとき, 直線$AB$と直線$CD$との交点の座標は
+\[
+\frac{(\bar{a}b-\bar{b}a)(c-d)-(\bar{c}d-\bar{d}c)(a-b)}{(\bar{a}-\bar{b})(c-d)-(\bar{c}-\bar{d})(a-b)}
+\]
+で与えられる.
+また, 直線$AB$と直線$CD$が平行であることは$(\bar{a}-\bar{b})(c-d)-(\bar{c}-\bar{d})(a-b)=0$と同値である.
+\end{bthm}
+\begin{prf*}
+交点の座標を$x$とおくと, 定理\ref{thm:colinearity1}により,
+\[
+(\bar{a}-\bar{b})x-(a-b)\bar{x}-\bar{a}b+\bar{b}a=(\bar{c}-\bar{d})x-(c-d)\bar{x}-\bar{c}d+\bar{d}c=0
+\]
+であるため, Cramérの公式より
+\[x=\frac{(\bar{a}b-\bar{b}a)(c-d)-(\bar{c}d-\bar{d}c)(a-b)}{(\bar{a}-\bar{b})(c-d)-(\bar{c}-\bar{d})(a-b)}\]
+が得られる.
+\end{prf*}
+%intersection
+%
+\begin{bcor}\label{cor:intersection3}
+$4$点$A(a)$, $B(b)$, $C(c)$, $D(d)$があり, $A\neq B$, $C\neq D$であるとする.
+$2$点$A$, $B$が単位円上にあり, 直線$AB$と直線$CD$とが平行でないとき, 直線$AB$と直線$CD$との交点の座標は
+\[
+\frac{ab(\bar{c}d-\bar{d}c)+(a+b)(c-d)}{ab(\bar{c}-\bar{d})+c-d}
+\]
+で与えられる.
+\end{bcor}
+\begin{prf*}
+$\bar{a}=\frac 1a$, $\bar{b}=\frac 1b$に注意すると,
+\begin{align*}
+\frac{(\bar{a}b-\bar{b}a)(c-d)-(\bar{c}d-\bar{d}c)(a-b)}{(\bar{a}-\bar{b})(c-d)-(\bar{c}-\bar{d})(a-b)}
+&=\frac{(\frac ba-\frac ab)(c-d)-(\bar{c}d-\bar{d}c)(a-b)}{(\frac 1a-\frac 1b)(c-d)-(\bar{c}-\bar{d})(a-b)}\\
+&=\frac{ab(\bar{c}d-\bar{d}c)+(a+b)(c-d)}{ab(\bar{c}-\bar{d})+c-d}\\
+\end{align*}
+と計算できる.
+\end{prf*}
+%
+%
+\begin{bcor}\label{cor:intersection2}
+単位円上に$4$点$A(a)$, $B(b)$, $C(c)$, $D(d)$があり, $A\neq B$, $C\neq D$であるとする.
+直線$AB$と直線$CD$とが平行でないとき, 直線$AB$と直線$CD$との交点の座標は
+\[
+\frac{ab(c+d)-cd(a+b)}{ab-cd}
+\]
+で与えられる.
+\end{bcor}
+\begin{prf*}
+$\bar{a}=\frac 1a$などに注意すると,
+\begin{align*}
+\frac{(\bar{a}b-\bar{b}a)(c-d)-(\bar{c}d-\bar{d}c)(a-b)}{(\bar{a}-\bar{b})(c-d)-(\bar{c}-\bar{d})(a-b)}
+&=\frac{(\frac ba-\frac ab)(c-d)-(\frac dc-\frac cd)(a-b)}{(\frac 1a-\frac 1b)(c-d)-(\frac 1c-\frac 1d)(a-b)}\\
+&=\frac{ab(c+d)-cd(a+b)}{ab-cd}\\
+\end{align*}
+と計算できる.
+\end{prf*}
+%two tangents
+%
+\begin{bcor}\label{cor:tangents}
+単位円$\Omega$上に$2$点$A(a)$, $C(c)$があるとき, 点$A$における$\Omega$の接線と点$C$における$\Omega$の接線との交点の座標は
+\[
+\frac{2ac}{a+c}
+\]
+で与えられる.
+\end{bcor}
+\begin{prf*}
+系\ref{cor:intersection2}において$b\to a$, $d\to c$の極限をとればよい.
+\[\lim_{b\to a,d\to c}\frac{ab(c+d)-cd(a+b)}{ab-cd}=\frac{2a^2c-2ac^2}{a^2-c^2}=\frac{2ac}{a+c}.\]
+\end{prf*}
+%
+%
+\begin{bthm}\label{thm:concurrency0}
+$\alpha$, $\beta$, $\gamma$を$0$でない複素数, $p$, $q$, $r$を実数とする.
+$3$直線$\bar\alpha z-\alpha\bar z=\sqrt{-1}p$, $\bar\beta z-\beta\bar z=\sqrt{-1}q$, $\bar\gamma z-\gamma\bar z=\sqrt{-1}r$が共点であることは
+\[
+\begin{vmatrix}\alpha&\bar\alpha&p\\\beta&\bar\beta&q\\\gamma&\bar\gamma&r\end{vmatrix}=0
+\]
+と同値である.
+ただし, $3$直線が平行である場合は無限遠点で交わると考え, 共線として扱う.
+\end{bthm}
+\begin{prf*}
+(必要性)
+交点を$z$としたとき,
+\[
+\begin{pmatrix}\alpha&\bar\alpha&p\\\beta&\bar\beta&q\\\gamma&\bar\gamma&r\end{pmatrix}
+\begin{pmatrix}-\bar z\\z\\-\sqrt{-1}\end{pmatrix}
+=\begin{pmatrix}0\\0\\0\end{pmatrix}
+\]
+が成り立つため
+\[
+\begin{vmatrix}\alpha&\bar\alpha&p\\\beta&\bar\beta&q\\\gamma&\bar\gamma&r\end{vmatrix}=0
+\]
+が得られる.
+交点が無限遠点の場合は$(-\bar{z},z,-\sqrt{-1})$の代わりに$(-\bar{z},z,0)$で同じことを行える.
+
+(十分性)
+\[
+\begin{vmatrix}\beta&\bar\beta\\\gamma&\bar\gamma\end{vmatrix}
+=\begin{vmatrix}\gamma&\bar\gamma\\\alpha&\bar\alpha\end{vmatrix}
+=\begin{vmatrix}\alpha&\bar\alpha\\\beta&\bar\beta\end{vmatrix}
+=0
+\]
+のとき, $3$直線は平行なので$3$直線は共点である.
+
+そうでないとき, 例えば
+\[\begin{vmatrix}\beta&\bar\beta\\\gamma&\bar\gamma\end{vmatrix}\neq 0\]
+であるとする.
+このとき,
+\[
+y=-\frac{\begin{vmatrix}\bar\beta&\sqrt{-1}q\\\bar\gamma&\sqrt{-1}r\end{vmatrix}}{\begin{vmatrix}\beta&\bar\beta\\\gamma&\bar\gamma\end{vmatrix}},\quad
+z=\frac{\begin{vmatrix}\beta&\sqrt{-1}q\\\gamma&\sqrt{-1}r\end{vmatrix}}{\begin{vmatrix}\beta&\bar\beta\\\gamma&\bar\gamma\end{vmatrix}}
+\]
+は
+\[
+\begin{pmatrix}\alpha&\bar\alpha&p\\\beta&\bar\beta&q\\\gamma&\bar\gamma&r\end{pmatrix}
+\begin{pmatrix}y\\z\\-\sqrt{-1}\end{pmatrix}
+=\begin{pmatrix}0\\0\\0\end{pmatrix}
+\]
+をみたす.
+$y=-\bar z$が成り立つので$z$が$3$直線の交点となる.
+\end{prf*}
+%
+%
+\begin{bthm}\label{thm:concurrency1}
+$6$点$A(a)$, $B(b)$, $C(c)$, $D(d)$, $E(e)$, $F(f)$があり, $A\neq D$, $B\neq E$, $C\neq F$であるとする.
+$3$直線$AD$, $BE$, $CF$が共点であることは
+\[
+\begin{vmatrix}a\bar{d}-d\bar{a}&a-d&\bar{a}-\bar{d}\\b\bar{e}-e\bar{b}&b-e&\bar{b}-\bar{e}\\c\bar{f}-f\bar{c}&c-f&\bar{c}-\bar{f}\end{vmatrix}=0
+\]
+と同値である.
+ただし, $3$直線が平行である場合は無限遠点で交わると考え, 共線として扱う.
+\end{bthm}
+\begin{prf*}
+直線$AD$, $BE$, $CF$の方程式はそれぞれ
+\[(\bar a-\bar d)z-(a-d)\bar z=\bar ad-\bar da,\]
+\[(\bar b-\bar e)z-(b-e)\bar z=\bar be-\bar eb,\]
+\[(\bar c-\bar f)z-(c-f)\bar z=\bar cf-\bar fc\]
+であるため, 定理\ref{thm:concurrency0}により定理が従う.
+\end{prf*}
+% \begin{prf*}
+% $3$直線の中に平行でない$2$直線の組が含まれる場合を考える.
+% このとき, 直線を入れ替えることによって直線$AD$が直線$BE$と直線$CF$とのどちらとも平行でないと仮定できる.
+% $3$直線が共点であることは$AD$と$BE$との交点と$AD$と$CF$との交点とが一致することと同値である.
+% 定理\ref{thm:intersection1}より
+% \[
+% \frac{(\bar{a}d-\bar{d}a)(b-e)-(\bar{b}e-\bar{e}b)(a-d)}{(\bar{a}-\bar{d})(b-e)-(\bar{b}-\bar{e})(a-d)}
+% =\frac{(\bar{a}d-\bar{d}a)(c-f)-(\bar{c}f-\bar{f}c)(a-d)}{(\bar{a}-\bar{d})(c-f)-(\bar{c}-\bar{f})(a-d)}
+% \]
+% と同値であり, 分母を払って整理すると
+% \[(a-d)\begin{vmatrix}\bar{a}d-\bar{d}a&a-d&\bar{a}-\bar{d}\\\bar{b}e-\bar{e}b&b-e&\bar{b}-\bar{e}\\\bar{c}f-\bar{f}c&c-f&\bar{c}-\bar{f}\end{vmatrix}=0\]
+% となる.
+% $a\neq d$なので
+% \[
+% \begin{vmatrix}a\bar{d}-d\bar{a}&a-d&\bar{a}-\bar{d}\\b\bar{e}-e\bar{b}&b-e&\bar{b}-\bar{e}\\c\bar{f}-f\bar{c}&c-f&\bar{c}-\bar{f}\end{vmatrix}=0
+% \]
+% が得られる.
+%
+% $3$直線のうちどの$2$本も平行である場合は, $3$直線は共点である.
+% また,
+% \[
+% \begin{vmatrix}b-e&\bar{b}-\bar{e}\\c-f&\bar{c}-\bar{f}\end{vmatrix}
+% =\begin{vmatrix}c-f&\bar{c}-\bar{f}\\a-d&\bar{a}-\bar{d}\end{vmatrix}
+% =\begin{vmatrix}a-d&\bar{a}-\bar{d}\\b-e&\bar{b}-\bar{e}\end{vmatrix}
+% =0
+% \]
+% なので余因子展開を用いると
+% \[
+% \begin{vmatrix}a\bar{d}-d\bar{a}&a-d&\bar{a}-\bar{d}\\b\bar{e}-e\bar{b}&b-e&\bar{b}-\bar{e}\\c\bar{f}-f\bar{c}&c-f&\bar{c}-\bar{f}\end{vmatrix}=0
+% \]
+% がわかる.
+% \end{prf*}
+%colinearity
+%
+\begin{bcor}\label{cor:concurrency2}
+円周上に$6$点$A(a)$, $B(b)$, $C(c)$, $D(d)$, $E(e)$, $F(f)$があり, $A\neq D$, $B\neq E$, $C\neq F$であるとする.
+$3$直線$AD$, $BE$, $CF$が共点であることは
+\[
+\begin{vmatrix}
+ad&a+d&1\\
+be&b+e&1\\
+cf&c+f&1\\
+\end{vmatrix}
+=0
+\]
+と同値である.
+また, この式は
+\[
+(a-b)(c-d)(e-f)+(b-c)(d-e)(f-a)=0
+\]
+と書くことができる.
+
+ただし, $3$直線が平行である場合は無限遠点で交わると考え, 共線として扱う.
+\end{bcor}
+\begin{prf*}
+はじめに単位円上の場合を考える.
+$\bar{a}=\frac 1a$などに注意する.
+\begin{align*}
+\begin{vmatrix}a\bar{d}-d\bar{a}&a-d&\bar{a}-\bar{d}\\b\bar{e}-e\bar{b}&b-e&\bar{b}-\bar{e}\\c\bar{f}-f\bar{c}&c-f&\bar{c}-\bar{f}\end{vmatrix}
+&=\begin{vmatrix}\frac{a^2-d^2}{ad}&a-d&\frac{d-a}{ad}\\\frac{b^2-e^2}{be}&b-e&\frac{e-b}{be}\\\frac{c^2-f^2}{cf}&c-f&\frac{f-c}{cf}\end{vmatrix}\\
+&=\frac{(a-d)(b-e)(c-f)}{abcdef}\begin{vmatrix}a+d&ad&-1\\b+e&be&-1\\c+f&cf&-1\end{vmatrix}\\
+&=\frac{(a-d)(b-e)(c-f)}{abcdef}\begin{vmatrix}ad&a+d&1\\be&b+e&1\\cf&c+f&1\end{vmatrix}
+\end{align*}
+であり, $(a-d)(b-e)(c-f)\neq 0$なので
+\[\begin{vmatrix}
+ad&a+d&1\\
+be&b+e&1\\
+cf&c+f&1\\
+\end{vmatrix}=0\]
+を得る.
+後半の主張は行列式を展開するとわかる.
+
+また, $(a,b,c,d,e,f)$を$(pa+q,pb+q,pc+q,pd+q,pe+q,pf+q)$に置き換えても式の形は変わらないため, 単位円でない円の場合にもわかる.
+\end{prf*}
+%
+%
+\begin{bthm}\label{thm:concyclic1}
+$4$点$A(a)$, $B(b)$, $C(c)$, $D(d)$が共円であることは
+\[
+\begin{vmatrix}a\bar{a}&a&\bar{a}&1\\b\bar{b}&b&\bar{b}&1\\c\bar{c}&c&\bar{c}&1\\d\bar{d}&d&\bar{d}&1\end{vmatrix}=0
+\]
+と同値である.
+\end{bthm}
+\begin{prf*}
+$4$点$A$, $B$, $C$, $D$の中に等しいものがあるとき, 主張は自明である.
+
+$4$点$A$, $B$, $C$, $D$が相異なるときを考える.
+$4$点$A$, $B$, $C$, $D$が共円であることは$\frac{(a-b)(c-d)}{(b-c)(d-a)}\in\mathbb{R}$と同値である.
+\[
+\begin{aligned}
+\frac{(a-b)(c-d)}{(b-c)(d-a)}\in\mathbb{R}&\iff\frac{(a-b)(c-d)}{(b-c)(d-a)}=\frac{(\bar{a}-\bar{b})(\bar{c}-\bar{d})}{(\bar{b}-\bar{c})(\bar{d}-\bar{a})}\\
+&\iff\begin{vmatrix}a\bar{a}&a&\bar{a}&1\\b\bar{b}&b&\bar{b}&1\\c\bar{c}&c&\bar{c}&1\\d\bar{d}&d&\bar{d}&1\end{vmatrix}=0
+\end{aligned}
+\]
+より, 主張が従う.
+\end{prf*}
+%
+%
+\begin{bthm}\label{thm:circumcenter}
+$3$点$A(a)$, $B(b)$, $C(c)$があり, $A$, $B$, $C$は同一直線上にないとする.
+このとき, 三角形$ABC$の外心の座標は
+\[
+-\frac{\begin{vmatrix}a\bar{a}&a&1\\b\bar{b}&b&1\\c\bar{c}&c&1\end{vmatrix}}{\begin{vmatrix}a&\bar{a}&1\\b&\bar{b}&1\\c&\bar{c}&1\end{vmatrix}}
+\]
+である.
+\end{bthm}
+\begin{prf*}
+外心の座標を$x$とおく.
+$\lvert a-x\rvert^2=a\bar{a}-a\bar{x}-x\bar{a}+x\bar{x}$であるため, 以下の$3$式が成り立つ.
+\begin{alignat*}{3}
+\bar{a}x&+a&\bar{x}&-{}&x\bar{x}+\lvert a-x\rvert^2&=a\bar{a}\\
+\bar{b}x&+b&\bar{x}&-{}&x\bar{x}+\lvert b-x\rvert^2&=b\bar{b}\\
+\bar{c}x&+c&\bar{x}&-{}&x\bar{x}+\lvert c-x\rvert^2&=c\bar{c}
+\end{alignat*}
+ここで, $\lvert a-x\rvert=\lvert b-x\rvert=\lvert c-x\rvert$より, $(s,t,u)=(x,\bar{x},\lvert a-x\rvert^2-x\bar{x})$は連立方程式
+\begin{alignat*}{3}
+\bar{a}s&+a&t&+{}&u&=a\bar{a}\\
+\bar{b}s&+b&t&+{}&u&=b\bar{b}\\
+\bar{c}s&+c&t&+{}&u&=c\bar{c}
+\end{alignat*}
+の解である.
+また, $a$, $b$, $c$は同一直線上にないのでこの方程式は解をただ$1$組もち, Cramérの公式より主張が得られる.
+\end{prf*}
+%
+%
+\begin{bthm}
+$3$点$A(a)$, $B(b)$, $X(x)$があり, $A\neq B$であるとする.
+直線$AB$に関して$X$と対称な点の座標は
+\[\frac{b-a}{\bar{b}-\bar{a}}\bar{x}+\frac{a\bar{b}-b\bar{a}}{\bar{b}-\bar{a}}\]
+で与えられる.
+また, 点$X$から直線$AB$に下ろした垂線の足の座標は
+\[\frac 12\biggl(x+\frac{b-a}{\bar{b}-\bar{a}}\bar{x}+\frac{a\bar{b}-b\bar{a}}{\bar{b}-\bar{a}}\biggr)\]
+で与えられる.
+\end{bthm}
+\begin{prf*}
+直線$AB$に関して$X$と対称な点を$Y(y)$とおく.
+このとき,
+\[\frac{y-a}{b-a}=\overline{\biggl(\frac{x-a}{b-a}\biggr)}\]
+が成り立つので
+\[y=\frac{b-a}{\bar{b}-\bar{a}}\bar{x}+\frac{a\bar{b}-b\bar{a}}{\bar{b}-\bar{a}}\]
+が得られる.
+\end{prf*}
+%
+%
+\begin{bcor}\label{cor:reflection2}
+$3$点$A(a)$, $B(b)$, $X(x)$があり, $A\neq B$であるとする.
+$\lvert a\rvert=\lvert b\rvert=1$であるとき, 直線$AB$に関して$X$と対称な点の座標は
+\[a+b-ab\bar x\]
+で与えられる.
+また, 点$X$から直線$AB$に下ろした垂線の足の座標は
+\[\frac 12(a+b+x-ab\bar x)\]
+で与えられる.
+\end{bcor}
+\begin{prf*}
+$\bar a=\frac 1a$, $\bar b=\frac 1b$に注意すると,
+\[\frac{b-a}{\bar{b}-\bar{a}}\bar{x}+\frac{a\bar{b}-b\bar{a}}{\bar{b}-\bar{a}}=a+b-ab\bar x\]
+が得られる.
+\end{prf*}
+%
+%
+\begin{bthm}\label{thm:harmonic}
+どの$2$つも相異なる$4$点$A(a)$, $B(b)$, $C(c)$, $D(d)$に対して, $ABCD$が調和四角形をなすまたは$(A,C;B,D)$が調和点列であることは
+\[
+(a-b)(c-d)+(b-c)(d-a)=0
+\]
+と同値である.
+また, これは
+\[
+(a+c)(b+d)=2(ac+bd)
+\]
+と書くことができる.
+\end{bthm}
+\begin{prf*}
+$ABCD$が調和四角形をなすまたは$(A,C;B,D)$が調和点列であることは, $\arg\frac{a-b}{c-b}=\arg\frac{a-d}{c-d}+\pi$かつ$\lvert AB\rvert\cdot\lvert CD\rvert=\lvert AD\rvert\cdot\lvert BC\rvert$であることと同値である.
+また, これは$(a-b)(c-d)$と$(b-c)(d-a)$との偏角の差が$\pi$で, $(a-b)(c-d)$と$(b-c)(d-a)$との絶対値が等しいことと同値である.
+したがって, これは$(a-b)(c-d)=-(b-c)(d-a)$と同値であり, 定理の主張を得る.
+\end{prf*}
+%
+%
+\begin{bthm}\label{thm:miquel}
+$5$点$A(a)$, $B(b)$, $C(c)$, $D(d)$, $M(m)$があり, 三角形$MAB$と三角形$MDC$とは正の向きに相似であるとする.
+このとき,
+\[m=\frac{ac-bd}{a+c-b-d}\]
+である.
+\end{bthm}
+\begin{prf*}
+三角形$MAB$と三角形$MDC$とが正の向きに相似であることは
+\[\frac{m-b}{m-a}=\frac{m-c}{m-d}\]
+と同値である.
+したがって,
+\[m=\frac{ac-bd}{a+c-b-d}\]
+が得られる.
+\end{prf*}
